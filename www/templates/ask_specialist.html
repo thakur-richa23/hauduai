@@ -1,0 +1,139 @@
+
+<ion-view view-title="Ask Hauduai Expert">
+<ion-nav-buttons side="primary" >
+	 <a  ng-href="#/app/browse" style="display:inline-block;color:#fff;position:fixed;left:10px;top:13px;" class="button-clear">
+      <i class="icon ion-chevron-left" style="font-size:17px;"></i>
+    </a>
+ </ion-nav-buttons>
+<ion-content ng-controller="ask_specialistCtrl">
+
+<form name="myForm">
+
+
+<!-- <div class="card">
+  <div class="item item-dividerr">
+   Type Your Question In The Box
+  </div>
+  <div class="item item-text-wrap" >
+    <textarea rows="6" style="width:100%" ng-model="que" maxlength="250" required> </textarea> 
+  </div>
+  <div class="item item-divider">
+  <div style="float:left">Characters Left: &nbsp;</div><div style="color:red;float:left"> {{250-que.length}}</div> 
+  </div>
+      
+</div> -->
+<br><br>
+<div class="border">
+		<textarea class="text" cols="40" ng-model="que" ng-model="{{qu}}" maxlength="{{qu}}" placeholder="Type your question here.."  required></textarea>
+	
+</div>
+<div style="float:left;font-size:12px;margin-left:12px;">Characters Left: &nbsp;</div><div style="color:red;float:left;font-size:12px;"> {{qu-que.length}}</div> 
+</div>
+<!-- <div class="card"> 
+  
+ 
+  
+<div class="list">
+
+  <label class="item item-input item-select">
+    <div class="input-label"> 
+      Specialist Field
+    </div>
+    <select ng-Change="changed()" ng-model="quali" required>
+      <option ng-repeat="x in specialareamajaor" >{{x.specialist_area}}</option>
+    </select>
+  </label>
+
+</div>
+<div class="card" ng-show="note">
+  <span style="color:red">Note: </span>Don't select Sub Field if you want to ask every Expert in above selected field.
+  </div>
+ 
+<div class="list">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Specialist Sub Field
+    </div>
+
+    <select ng-model="sub_field">
+       <option ng-repeat="x in qualii" >{{x.specialist_area_sub_category}}</option>
+    </select>
+  </label>
+
+</div>
+
+<div class="item item-divider">
+   <button class="button button-dark button-small" style="float:right" ng-disabled="myForm.$invalid" ng-click="submitt()">
+  Submit
+</button>
+  </div> -->
+  <div class="pad" style="margin-bottom:-28px;">
+		<div class="list">
+			<label class="item item-input item-select">
+			<div class="input-label">
+				&nbsp;
+			</div>
+			<select ng-Change="changed()" ng-model="quali" required style="color:#333;">
+			<option value="" >Select Subject Matter</option>
+				<option ng-repeat="x in specialareamajaor" >{{x.specialist_area}}</option>
+            </select>
+			</label>
+		</div>	
+		
+	</div>
+	<div class="card" ng-show="note" style="margin-bottom:0px;font-size: 12px;">
+  <span style="color:red;">Note: </span>Don't select Sub Field if you want to See all Experts in above selected Subject Matter.
+  </div>
+	<div class="list" ng-show="note">
+		<div class="list" style="margin-bottom:10px;">
+			<label class="item item-input item-select">
+			<div class="input-label">
+				&nbsp;
+			</div>
+			<select ng-model="sub_field" style="color:#333;">
+			<option value="" >“Select Sub Field</option>
+       <option ng-repeat="x in qualii" >{{x.specialist_area_sub_category}}</option>
+    </select>
+			</label>
+		</div>	
+		
+	</div>
+	<div class="text-center">
+		<button class="ask" ng-disabled="" ng-click="submitt()" style="border-radius:10px;margin-left:-20px;margin-top:18px;">Ask Hauduai Expert</button>
+		<a class="ask" href="#/app/browse" style="background:red;color:white;border-radius:9px;margin-right:10px;">Back</a>
+	</div>
+</form>
+
+</ion-content>
+</ion-view >
+<!-- <div class="tabs">
+	  <a class="tab-item clr">
+		Recent Questions
+	  </a>
+	  <a class="tab-item active">
+		Most Responses
+	  </a>
+	  <a class="tab-item clr">
+		Recently Answered
+	  </a>
+	  <a class="tab-item clr">
+		No Answers
+	  </a>
+	</div> -->
+
+<style>
+.item-dividerr{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    min-height: 30px;
+    background-color: deepskyblue;
+    color: #222;
+    font-weight: 500;
+}
+.border{
+	border: 4px solid #9acbec;
+    margin: 3px;
+    padding: 2px;
+}
+</style>

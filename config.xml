@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<widget id="com.ionicframework.haudai596641" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Hauduai?</name>
+  <description>
+        An Ionic Framework and Cordova project.
+    </description>
+  <author email="you@example.com" href="http://example.com.com/">
+      mediaoncloud@gmail.com
+    </author>
+  <content src="index.html"/>
+  <access origin="*"/>
+  <preference name="webviewbounce" value="false"/>
+  <preference name="UIWebViewBounce" value="false"/>
+  <preference name="DisallowOverscroll" value="true"/>
+  <preference name="android-minSdkVersion" value="16"/>
+  <preference name="BackupWebStorage" value="none"/>
+  <preference name="SplashScreen" value="screen"/>
+  <preference name="SplashScreenDelay" value="5000"/>
+  <feature name="StatusBar">
+    <param name="ios-package" value="CDVStatusBar" onload="true"/>
+  </feature>
+ 
+  <platform name="android">
+    <icon src="iconldpi.png" density="ldpi"/>
+    <icon src="iconmdpi.png" density="mdpi"/>
+    <icon src="iconhdpi.png" density="hdpi"/>
+    <icon src="iconxhdpi.png" density="xhdpi"/>
+    <icon src="iconxxhdpi.png" density="xxhdpi"/>
+    <icon src="iconxxxhdpi.png" density="xxxhdpi"/> 
+    <splash src="how do 2.png" density="land-ldpi"/>
+    <splash src="how do 2.png" density="land-mdpi"/>
+    <splash src="how do 2.png" density="land-hdpi"/>
+    <splash src="how do 2.png" density="land-xhdpi"/>
+     <splash src="how do 2.png" density="land-xxhdpi"/>
+    <splash src="how do 2.png" density="land-xxxhdpi"/>
+    
+    <splash src="how do 3.png" density="port-ldpi"/>
+    <splash src="how do 3.png" density="port-mdpi"/>
+    <splash src="how do 3.png" density="port-hdpi"/>
+    <splash src="how do 3.png" density="port-xhdpi"/>
+     <splash src="how do 3.png" density="port-xxhdpi"/>
+    <splash src="how do 3.png" density="port-xxxhdpi"/> 
+  </platform>
+</widget>

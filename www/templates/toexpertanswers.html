@@ -1,0 +1,79 @@
+ <div ng-controller="toexptanswerCtrl" >
+		<div class="bar bar-header bar-positive">
+			<button class="button button-clear button-positive" ng-click="gobaacck()"><h2><i class="ion-arrow-left-c"></i></h2></button>
+			<h1 class="title">Answer</h1>
+		</div>
+
+<ion-content  class="has-subheader">
+  
+<span style="color:red;font-size:17px;margin-left:12px;">Question:</span>
+		<div class="card " ng-show="alltterr">
+				
+				  <div class="item item-text-wrap" style="background:#cdc9ff;color:#ffffff;">
+					{{toexprtanswer[0].question}}
+					<!--{{toexprtanswer[0].user_name}}-->
+					</div>
+				  
+		</div>
+
+			<div class="card " ng-repeat="x in toexprtanswer">
+				<!-- <span style="color:red;font-size:17px;margin-left:12px;">Answer:</span> -->
+				  <div class="item item-text-wrap" style="background:white !important;color:#000611 !important;font-size:18px !important;">
+					<div class="list" ng-if="x.type=='specialist' || x.type=='speciallist'">
+					
+				   <span class="abc">Answer : </span> {{x.answer== "undefined" ? " " : x.answer|htmlToPlaintext|removeHTMLTags}}<br>
+				   <span class="abc">Expert Name : </span> {{x.user_name}}<br>
+					<!-- <span class="abc"> : </span> {{x.community}}<br> -->
+					<span class="abc">Subject Matter Expert : </span> {{x.profession}}<br>
+				   
+					
+					<span class="abc">Suffix : </span> {{x.suffix}}<br>
+					
+				  </div>
+				  </div>
+				   <div class="item item-text-wrap" style="background:white !important; color:#000611 !important; font-size:18px !important;">
+					<div class="list" ng-if="x.type=='community'">
+					
+				   <span class="abc">Answer : </span>{{x.answer== "undefined" ? " " : x.answer|htmlToPlaintext|removeHTMLTags}}<br>
+				   <span class="abc">User Name : </span> {{x.user_name}}<br>
+					 <span class="abc">Suffix : </span> {{x.suffix}}<br>
+					<!-- <span class="abc"> : </span> {{x.community}}<br> -->
+					<span class="abc">Proffesion : </span> {{x.profession}}<br>
+					<span class="abc">Sector : </span> {{x.sector}}<br>
+				   
+					
+				  
+					
+					
+				  </div>
+				  
+				  </div>
+			</div>
+		<div class="card " ng-show="alltterer">
+		  <div class="item item-text-wrap" style="background:white;color:#cdc9ff;">
+			No Answer To this question right now.
+		  </div>
+		</div>
+  </ion-content>
+	<div class="tabs">
+	  <a href="#/app/new" class="tab-item clr" style="background:#0065ff !important;color:#fff !important;">
+		Recent Questions
+	  </a>
+	  <a href="#/app/mostresponse" class="tab-item clr" style="background:#237bff !important;color:#fff !important;">
+		Most Responses
+	  </a>
+	  <a href="#/app/recentans" class="tab-item clr" style="background:#0a6cff !important;color:white !important;">
+		Recently Answered
+	  </a>
+	  <a  href="#/app/noans" class="tab-item clr" style="background:#3a89ff !important;color:white !important;">
+		No Answers
+	  </a>
+	</div>	
+
+</div>
+<style>
+.abc{
+	font-size:15px;color:red;
+
+}
+</style>

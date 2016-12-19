@@ -1,0 +1,90 @@
+<div >
+<div class="bar bar-header bar-positive">
+ <button class="button button-clear button-positive" ng-click="gobaacck()"><h2><i class="ion-arrow-left-c"></i></h2></button>
+  <h1 class="title">Report Abuse</h1>
+</div>
+
+<ion-content  class="has-subheader" ng-controller="sturepoCtrl" >
+
+<form  name="myForm" ng-submit="Submitqtos()" class="form-group">
+				<!--<div class="card12" style="margin-left:10px;font-size:20px;">
+							<h4>Contact Us</h4>
+							<h5>Feel free to contact us</h5>
+							<hr style="border:1px solid #333;">
+						</div>-->
+						<ul class="list">
+							<li class="item2" >
+								<div class="roww" style="margin-bottom:12px;">
+									<div class="col" style="font-size:14px;margin-left:15px;">Name</div>
+									<div class="col col-35" style="margin-left:65px;margin-top:-32px;font-size:15px;">
+                                         <span style=" font-size:15px;color:#0169b0;">{{repot.first_name}}</span><!-- <input   value="" ng-model="name" type="text"  placeholder="Enter Name" class="button button-stable"/>   -->
+									</div>
+								</div>
+							</li><br>
+							<li class="item2" >
+								<div class="roww" style="margin-bottom:12px;">
+									<div class="col col-65" style="font-size:14px;margin-left:15px;">Email Id: </div>
+									<div class="col col-35" style="margin-left:65px;margin-top:-31px;font-size:15px;" >
+                                     <span style=" font-size:15px;color:#0169b0;">&nbsp;&nbsp;{{repot.email}}</span><!-- <input   value="" type="text"   ng-model="email" placeholder="Enter email"  class="button button-stable"/>  -->
+									</div>	
+								</div>	
+							</li><br>
+							<li class="item2" >
+								<div class="roww" style="margin-bottom:12px;" >
+									<div class="col col-65"  style="font-size:14px;margin-left:15px;">Question: </div>
+									<div class="col col-35" style="margin-left:65px;margin-top:-31px;">
+                                        
+                                        <span style=" font-size:15px;color:#0169b0;">&nbsp;&nbsp;&nbsp;&nbsp;{{abuse_ques.question}}</span>
+									</div>	
+								</div>	
+							</li><br>
+							
+							<li class="item2">
+								<div class="roww">
+									 <div class="border">
+										<textarea class="text"  type= "text" ng-model="answertyped" placeholder="Message.."></textarea> 
+		                             </div> 
+								</div>	
+							</li>
+						
+		<label class="item" style="background-color:#fff !important; margin-top:1px;">
+          <button class="button button-positive btn1" ng-disabled="myForm.$invalid" type="submit" style="width:50%;display: block;margin-right: 0px;margin-left: 0; margin-top: 3px; margin-bottom: 3px; border-right-width: 1px;border-left-width: 1px;border-radius: 4px;background:#0169b0; float:right;">Report Abuse</button>
+        </label>	
+						</ul>
+	
+	
+	</form>
+	<!--<div class="footer" style="margin-top:3px;">
+	  <<i class="icon ion-android-globe" style="font-size:20px;"></i>
+	
+	 <h3 class="text-center icon ion-android-globe">  Our Office</h3>
+	  <h5 class="text-center">Hauduai? Nigeria Limited Lagos, Nigeria.</h5>
+	
+	</div>  -->
+
+  </ion-content>
+  <div class="tabs">
+	  <a href="#/app/new" class="tab-item clr" style="background:#0065ff !important;color:#fff !important;">
+		Recent Questions
+	  </a>
+	  <a href="#/app/mostresponse" class="tab-item clr" style="background:#237bff !important;color:#fff !important;">
+		Most Responses
+	  </a>
+	  <a href="#/app/recentans" class="tab-item clr" style="background:#0a6cff !important;color:white !important;">
+		Recently Answered
+	  </a>
+	  <a  href="#/app/noans" class="tab-item clr" style="background:#3a89ff !important;color:white !important;">
+		No Answers
+	  </a>
+	</div>	
+
+</div>
+<style>
+.abc{
+	font-size:16px;color:red;
+
+}
+
+
+</style>
+

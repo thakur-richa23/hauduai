@@ -1,0 +1,315 @@
+<ion-view view-title="Edit Profile">
+<ion-scroll  ng-controller="editspecialistCtrl">
+   <form  name="myForm" ng-submit="doSubmit()" class="form-group"  novalidate>
+    <div class="list has-subheader " style="    width: 89%;
+    margin-left: 5%;">
+ 
+   <h3 style="color:grey;">Edit Profile</h3>
+   <div ng-if="get_all.type=='specialist'">
+ <h4><span style="color:#cdc9ff;font-size:17px;"> Type:-</span> {{get_all.type}}</h4><br><br>
+			<div class="row">
+				<div class="col col-75" ng-show="show"  style="color:red;">
+					<label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp;</div>
+					
+					  
+					  
+						
+						   <select ng-model="suffixqual" class="sel" ng-Change="changed()">
+							 <option value=""> Select Suffix</option>
+						  <option ng-repeat="x in suffix">{{x.suffix}}</option> 
+						</select>
+				</label>
+			</div>
+				<div class="col col-75" ng-show="hideme">
+					<label class="item item-input">
+						 <input type="text" placeholder="Enter Your suffix to  add" ng-model="suffixqual">
+					</label>
+				</div>
+				  <div class="col">
+						<div class="button button-block btn2" ng-click="change_inputt()">ADD</div>
+				  </div>
+			</div>
+	
+	<div class="row">
+		<div class="col col-100">
+			
+			 <div class="list list-margin"  style="color:red;">
+
+                <label class="item item-input item-select">
+                    <div class="input-labell">
+                        &nbsp;
+                    </div>
+                    
+                       
+                    <select ng-model="emplstatus" class="sel">
+						 <option value=""> Employment Status</option>
+						  <option ng-repeat="x in employment_status" >{{x.title}}</option>
+						 
+					</select>
+                </label>
+
+            </div>
+			
+			<div class="list list-margin"  style="color:red;">
+		 <label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp; </div>
+					
+					  
+				<!-- <select ng-Change="getsubsubsector()" ng-model="subsubsector" > -->
+					<select ng-Change="getexpertarea1()" ng-model="expsectorarea1"  class="sel">
+					   <option  value=""> Expert Field1</option>
+					  <option ng-repeat="x in spec_area" value={{x.id}}>{{x.specialist_area}}</option>
+     
+                    </select>
+				</label>
+			</div>
+			<div class="list list-margin"  style="color:red;">
+				 <label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp; </div>
+					
+					 <select ng-Change="getsubsector()" ng-model="subsectorarea" class="sel">
+						  <option  value="">Expert Sub Field1</option>
+						  <option ng-repeat="x in spec_sub_area" value={{x.id}}>{{x.specialist_area_sub_category}}</option>
+     
+					</select>
+				</label>
+			</div>
+			
+			<div class="list list-margin"  style="color:red;">
+			   <label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp;</div>
+				
+					 
+					  <!-- <select ng-Change="getsubprofession()" ng-model="subprofession" class="sel"> -->
+						<select ng-Change="getexpert2area()" ng-model="expertarea2" class="sel">
+					      <option  value=""> Expert Field2</option> 
+					    <option ng-repeat="x in spec_area" value={{x.id}} >{{x.specialist_area}}</option>
+					 
+					  </select>
+				</label>
+			</div>
+			
+			<div class="list list-margin">
+			<!-- <div  class="col col-75" ng-show="showmee"> -->
+			 	<label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp;</div>
+				
+					 
+					  <!-- <select ng-Change="getsubprofession()" ng-model="subprofession" class="sel"> -->
+						<!-- <select ng-Change="getsubspe_area2()" ng-model="spe_area2" class="sel"> -->
+					     <select ng-Change="getsubsector()" ng-model="expertareasub2" class="sel">
+							  <option value=""> Expert Sub Field2</option>
+							  <option ng-repeat="x in spec_sub_area2" value={{x.id}}> {{x.specialist_area_sub_category}}</option>
+                         </select>
+				</label>
+				</div>
+			
+			 <div class="row">
+			<div class="col col-75" ng-show="showmee">
+				<label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp;</div>
+					
+					  
+					  
+    
+						   <select ng-model="proaffiliation" class="sel" ng-Change="changed()" >
+							 <option value="">Professional Affiliation</option>
+						  <option ng-repeat="x in profession_affi">{{x.title}}</option> 
+						</select>
+				</label>
+			</div>
+				<div class="col col-75" ng-show="hide">
+					<label class="item item-input">
+						<input type="text" placeholder="Enter Your professsional affiliation to add" ng-model="proaffiliation">
+					</label>
+				</div>
+				  <div class="col">
+						<div class="button button-block btn2" ng-click="chang_inputtt()">ADD</div>
+				  </div>
+			</div> 
+			
+			
+					</div>
+				</div>
+			 
+			 <br>
+			 <br>
+			 
+	 
+			<label class="item"    style="background-color:#fff !important;">
+				<button class="button button-positive btn1" ng-disabled="" type="submit" style="width:100%;	display: block;margin-right: 0px;
+    margin-left: 0; margin-top: 5px; margin-bottom: 5px; border-right-width: 1px;
+    border-left-width: 1px;border-radius: 4px;" >
+					SAVE
+				</button>
+			</label>
+	</div>	
+		
+<!--------------------------- User Profile Start------------------------------------->	
+							
+		 <div ng-if="get_all_profile.type=='user'">
+		  <h4><span style="color:#cdc9ff;font-size:17px;"> Type:-</span> {{get_all_profile.type}}</h4><br><br>
+				<div class="row">
+			<div class="col col-75" ng-show="shownto" style="color:red;">
+				<label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp;</div>
+					
+					  
+					  
+    
+						   <select ng-model="qualified" class="sel">
+							 <option value="" ng-click="change_input()"> Select Suffix</option>
+						  <option ng-repeat="x in suffix" >{{x.suffix}}</option> 
+						</select>
+				</label>
+			</div>
+				<div class="col col-75"  ng-show="hidet">
+					<label class="item item-input">
+						<input type="text" placeholder="Enter Your suffix to  add" ng-model="qualified">
+					</label>
+				</div>
+				  <div class="col">
+				    <!-- <button type="button" class="button button-block btn2" ng-show="shownto"  ng-click="muteToggle()">ADD</button>  -->
+				    <!-- <button type="button" class="button button-block btn2" ng-show="shownto"  ng-click="muteToggle()">ADD</button>  -->
+						  <div class="button button-block btn2" ng-click="change_input()">ADD</div>  
+				  </div>
+			
+			</div>
+	
+	<div class="row"> 
+		 <div class="col col-100"> 
+			
+			 <div class="list list-margin" style="color:red;">
+
+                 <label class="item item-input item-select">
+				 
+                    <div class="input-labell">
+                        &nbsp;
+                    </div>
+                    
+                       
+                    <select ng-model="emp_status" class="sel" required>
+						 <option value=""> Employment Status</option>
+						   <option ng-repeat="x in employment_status" >{{x.title}}</option>
+						  <!--  <option value="Part Time Employee" >Part Time Employee</option>
+						   <option value="Business Owner" >Business Owner</option>
+						   <option value="Freelance" >Freelance</option>
+						   <option value="Fresh Graduate" >Fresh Graduate</option>
+						   <option value="Student" >Student</option>
+						   <option value="Jobless" >Jobless</option>
+						   <option value="Self Employed" >Self Employed</option>
+						   <option value="NYSC" >NYSC</option> -->
+					</select>
+					
+                </label>
+
+            </div>
+			<div class="list list-margin" style="color:red;">
+				<label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp; </div>
+					
+					  
+					<select class="sel" ng-Change="getsubsector()" ng-model="subsector" required>
+	  <option  value="" > Business Sector</option>
+      <option ng-repeat="x in sector" value={{x.id}}>{{x.sector_category_name}}</option>
+     
+    </select>
+				</label>
+			</div>
+			<div class="list list-margin" style="color:red;">
+				 <label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp; </div>
+					
+					  
+<select ng-Change="getsubsubsector()" ng-model="subsubsector" class="sel" required>
+	<option value="">  Business Sub Sector</option>
+      <option ng-repeat="x in sector_subcategories" value={{x.id}} >{{x.sector_sub_category_name}}</option>
+     
+    </select>
+				</label>
+			</div>
+			<div class="list list-margin" style="color:red;">
+				 <label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp;</div>
+				
+					 
+					  <select ng-Change="getsubprofession()" ng-model="subprofession" class="sel" required>
+       <option value=""> Profession </option>
+      <option ng-repeat="x in profession" value={{x.id}} >{{x.profession_category_name}}</option>
+    </select>
+				</label>
+			</div>
+			
+			<div class="list list-margin" style="color:red;">
+			<!-- <div  class="col col-75" ng-show="showmee"> -->
+				 <label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp;</div>
+					
+					  
+					  <select ng-model="prof_sub" class="sel" required>
+      <option value=""> Profession Sub Category</option>
+      <option ng-repeat="x in profession_subcategory" value={{x.id}} >{{x.profession_sub_category_name}}</option>
+    </select>
+				</label>
+				</div>
+				<!-- <div class="col col-75" ng-show="show">
+		
+			<label class="item item-input">
+				<!-- <input type="text" placeholder="Qualification" ng-model="quali" ng-if="hide" required> 
+				<option ng-repeat="x in profession_sub_category_name"  ng-if="show" ></option>
+			</label>
+		
+		</div>
+				  <div class="col">
+			<div class="button button-block btn2" ng-click="chang_inputt()">ADD</div>
+		</div> 
+				
+			</div> -->
+			
+			<div class="row">
+			<div class="col col-75" ng-show="afflicap">
+				<label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp;</div>
+					
+					  
+					  
+    
+						   <select ng-model="proaffi" class="sel" ng-Change="changed()">
+							 <option value="" ng-click="change_input()">Professional Affiliation</option>
+						  <option ng-repeat="x in profession_affi" >{{x.title}}</option> 
+						</select>
+				</label>
+			</div>
+				<div class="col col-75"  ng-show="ends">
+					<label class="item item-input">
+						<input type="text" placeholder="Enter Your professsional affliation to  add" ng-model="proaffi">
+					</label>
+				</div>
+				  <div class="col">
+				    <!-- <button type="button" class="button button-block btn2" ng-show="shownto"  ng-click="muteToggle()">ADD</button>  -->
+						  <div class="button button-block btn2" ng-click="chang_inputt()">ADD</div>  
+				  </div>
+			
+			</div>
+		
+		</div>
+   </div>
+   <br>
+			 <br>
+			 
+	 
+			<label class="item"    style="background-color:#fff !important;">
+				<button class="button button-positive btn1" ng-disabled="" type="submit" style="width:100%;	display: block;margin-right: 0px;
+    margin-left: 0; margin-top: 5px; margin-bottom: 5px; border-right-width: 1px;
+    border-left-width: 1px;border-radius: 4px;" >
+					SAVE
+				</button>
+			</label>
+			
+	</div> 
+	</div>
+</form>
+
+</ion-scroll>
+</ion-view>

@@ -1,0 +1,79 @@
+ <div ng-controller="stu_toexptanswerCtrl" >
+		<div class="bar bar-header bar-positive">
+			<button class="button button-clear button-positive" ng-click="gobaacck()"><h2><i class="ion-arrow-left-c"></i></h2></button>
+			<h1 class="title">Answer</h1>
+		</div>
+
+<ion-content  class="has-subheader">
+  
+<span style="color:red;font-size:17px;margin-left:12px;">Question:</span>
+		<div class="card " ng-show="alltterr">
+				
+				  <div class="item item-text-wrap" style="background:#0169b0;color:#ffffff;">
+					{{toexprtanswer[0].question}}
+					<!--{{toexprtanswer[0].user_name}}-->
+					</div>
+				  
+		</div>
+
+			<div class="card " ng-repeat="x in toexprtanswer">
+				<!-- <span style="color:red;font-size:17px;margin-left:12px;">Answer:</span> -->
+				  <div class="item item-text-wrap" style="background:white !important;color:#000611 !important;font-size:18px !important;">
+					<div class="list" ng-if="x.user_type == 'lecturer'">
+					
+				   <span class="abc">Answer : </span> {{x.answer== "undefined" ? " " : x.answer|htmlToPlaintext|removeHTMLTags}}<br>
+				   <span class="abc">Lecturer Name : </span> {{x.user_name}}<br>
+					<!-- <span class="abc"> : </span> {{x.community}}<br> -->
+					<span class="abc">Department : </span> {{x.course_name}}<br>
+				   <span class="abc">Specialization : </span> {{x.specialization}}<br>
+					
+					<span class="abc">Qualification : </span> {{x.qualification}}<br>
+					
+				  </div>
+				  </div>
+				   <div class="item item-text-wrap" style="background:white !important; color:#000611 !important; font-size:18px !important;">
+					<div class="list" ng-if="x.user_type == 'student'">
+					
+				   <span class="abc">Answer : </span>{{x.answer== "undefined" ? " " : x.answer|htmlToPlaintext|removeHTMLTags}}<br>
+				   <span class="abc">Student Name : </span> {{x.user_name}}<br>
+					 <span class="abc">Course : </span> {{x.course_name}}<br>
+					<!-- <span class="abc"> : </span> {{x.community}}<br> -->
+					<span class="abc">Year(Level) : </span> {{x.year_level_name}}<br>
+					<span class="abc">University : </span> {{x.university_name}}<br>
+				   
+					
+				  
+					
+					
+				  </div>
+				  
+				  </div>
+			</div>
+		<div class="card " ng-show="alltterer">
+		  <div class="item item-text-wrap" style="background:white;color:#cdc9ff;">
+			No Answer To this question right now.
+		  </div>
+		</div>
+  </ion-content>
+	<div class="tabs">
+	  <a href="#/app/new" class="tab-item clr" style="background:#0065ff !important;color:#fff !important;">
+		Recent Questions
+	  </a>
+	  <a href="#/app/mostresponse" class="tab-item clr" style="background:#237bff !important;color:#fff !important;">
+		Most Responses
+	  </a>
+	  <a href="#/app/recentans" class="tab-item clr" style="background:#0a6cff !important;color:white !important;">
+		Recently Answered
+	  </a>
+	  <a  href="#/app/noans" class="tab-item clr" style="background:#3a89ff !important;color:white !important;">
+		No Answers
+	  </a>
+	</div>	
+
+</div>
+<style>
+.abc{
+	font-size:15px;color:red;
+
+}
+</style>

@@ -1,0 +1,61 @@
+<ion-view view-title="Comment">
+<ion-nav-buttons side="primary" >
+	 <a  ng-href="#/app/search" style="display:inline-block;color:#fff;position:fixed;left:10px;top:13px;" class="button-clear">
+      <i class="icon ion-chevron-left" style="font-size:17px;"></i>
+    </a>
+ </ion-nav-buttons>
+<ion-content ng-controller="pollsresultsCtrl">
+
+<div class="card">
+  <div class="item item-divider">
+    Poll Question
+  </div>
+  <div class="item item-text-wrap" ng-repeat="x in comment_que">
+    {{x.question}}
+  </div>
+  
+</div>
+
+<div class="card">
+  <div class="item item-dividerr">
+   Write your Comment
+  </div>
+  <div class="item item-text-wrap" >
+    <textarea rows="3" style="width:100%" ng-model="writecomment"> </textarea> 
+  </div>
+  <div class="item item-divider">
+   <button class="button button-dark button-small" style="float:right" ng-click="submitt()">
+  Submit
+</button>
+  </div>
+</div>
+<div class="card"  >
+  
+ 
+  <div class="item item-dividerr">
+    Comments
+  </div>
+</div>
+<div class="card"  ng-repeat="x in comment">
+  
+  <div class="item item-text-wrap" >
+    {{x.comment}}
+  </div>
+  <div class="item item-divider">
+   <p style="color:black;"> User : {{x.first_name}}</p>
+  </div>
+</div>
+
+
+</ion-content>
+</ion-view >
+<style>
+.item-dividerr{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    min-height: 30px;
+    background-color: deepskyblue;
+    color: #222;
+    font-weight: 500;
+}
+</style>

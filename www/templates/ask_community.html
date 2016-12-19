@@ -1,0 +1,187 @@
+
+<ion-view view-title="Ask Hauduai Community" class="a">
+<ion-nav-buttons side="primary" >
+	 <a  ng-href="#/app/browse" style="display:inline-block;color:#fff;position:fixed;left:10px;top:13px;" class="button-clear">
+      <i class="icon ion-chevron-left" style="font-size:17px;"></i>
+    </a>
+ </ion-nav-buttons>
+<ion-content ng-controller="ask_communityCtrl">
+<form name="myForm">
+
+
+<!-- <div class="card"  >
+  <div class="item item-dividerr">
+   Type Your Question In The Box
+  </div>
+  <div class="item item-text-wrap" >
+    <textarea rows="9" style="width:100%" ng-model="que" maxlength="250" required> </textarea> 
+  </div>
+  <div class="item item-divider">
+  <div style="float:left">Characters Left: &nbsp;</div><div style="color:red;float:left"> {{250-que.length}}</div>
+  </div>
+  
+</div> --><br><br>
+<div class="border">
+		<textarea class="text" cols="40" ng-model="que" ng-model="{{qu}}" maxlength="{{qu}}" placeholder="Type your question here.."  required></textarea> 
+	
+</div>
+<div style="float:left;font-size:14px;margin-left:10px;">Characters Left: &nbsp;</div><div style="color:red;float:left;font-size:14px;">   {{qu-que.length}}</div>
+    </div>
+<!-- <div class="card"  >
+  
+ 
+  
+		<div class="list">
+
+		  <label class="item item-input item-select">
+			<div class="input-label">
+			  Profession
+			</div>
+			<select ng-Change="changed()" ng-model="subprofession" >
+			  <option ng-repeat="x in profession" >{{x.profession_category_name}}</option>
+			</select>
+		  </label>
+
+		</div>
+
+ 
+		<div class="list">
+
+		  <label class="item item-input item-select" >
+			<div class="input-label">
+			  Profession Sub Field
+			</div>
+
+			<select ng-model="sub_p_field" >
+			   <option ng-repeat="x in qualii" >{{x.profession_sub_category_name}}</option>
+			</select>
+		  </label>
+
+		</div>
+
+		//<!-- <div class="item item-divider">
+				//	   <button class="button button-dark button-small" style="float:right" //ng-disabled="myForm.$invalid" ng-click="submitt()">
+				//	  Submit
+				//	</button>
+		 // </div> -->
+<!--</div>
+			
+			<div class="card"  >
+  
+ 
+  
+		<div class="list">
+
+		  <label class="item item-input item-select">
+			<div class="input-label">
+			  Sector
+			</div>
+			<select ng-Change="changedsector()" ng-model="sub_sector_field" required>
+			  <option ng-repeat="x in sector_community" >{{x.sector_category_name}}</option>
+			</select>
+		  </label>
+
+		</div>
+
+ 
+		<div class="list" ng-show="sub_sec_show">
+
+		  <label class="item item-input item-select">
+			<div class="input-label">
+			  Sector Sub Field
+			</div>
+
+			 <select ng-model="ss"> 
+			
+			   <option ng-repeat="x in s" >{{x.sector_sub_category_name}}</option>
+			</select>
+		  </label>
+
+		</div>
+
+		<div class="item item-divider">
+					   <button class="button button-dark button-small" style="float:right" ng-disabled="myForm.$invalid" ng-click="submitt_community_question()">
+					  Submit
+					</button>
+		  </div>
+</div> -->
+<br>
+<div class="pad">
+		<div class="list">
+			<label class="item item-input item-select">
+			<div class="input-label" style="margin-right:10px;">
+				&nbsp;
+			</div>
+			
+			  
+			<select ng-Change="changed()" ng-model="subprofession" required style="color:#333;">
+			<option value="">Select Profession</option>
+			  <option ng-repeat="x in profession" >{{x.profession_category_name}}</option>
+			</select>
+			</label>
+		</div>
+		<div class="list"  ng-show="sub_pro_show">
+			<label class="item item-input item-select">
+			<div class="input-label">
+				&nbsp;
+			</div>
+		
+			  
+			  <select ng-model="sub_p_field" style="color:#333;">
+			  <option value="">Select Sub Profession</option> 
+			   <option ng-repeat="x in qualii" >{{x.profession_sub_category_name}}</option>
+			</select>
+			</label>
+		</div>	
+		<div class="list" >
+			<label class="item item-input item-select">
+			<div class="input-label">
+				&nbsp;
+			</div>
+		
+			  
+			 <select ng-Change="changedsector()" ng-model="sub_sector_field" style="color:#333;">
+			 <option value="">Select Sector</option>
+			  <option ng-repeat="x in sector_community" >{{x.sector_category_name}}</option>
+			</select>
+			</label>
+		</div>	
+		<div class="list" ng-show="sub_sec_show">
+			<label class="item item-input item-select">
+			<div class="input-label">
+				&nbsp;
+			</div>
+		
+			  
+			 
+			  <select ng-model="ss" ng-Change="changedsector()" style="color:#333;"> 
+			<option value="">Select Sub Sector</option>
+			   <option ng-repeat="x in s" >{{x.sector_sub_category_name}}</option>
+			</select>
+			</label>
+		</div>
+		
+		
+		<br>
+		
+		
+		<div class="text-center">
+		<button class="ask" ng-disabled="" ng-click="submitt_community_question()" style="margin-left:-20px;border-radius:10px;">Ask Hauduai Community</button>
+		<a class="ask" href="#/app/browse" style="background:red;color:white;border-radius:9px;margin-right:12px;margin-top:1px;">Back</a>
+	</div>
+</form>
+</ion-content>
+</ion-view >
+<style>
+.item-dividerr{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    min-height: 30px;
+    background-color: deepskyblue;
+    color: #222;
+    font-weight: 500;
+}
+.a{
+	text-align:center !important;
+}
+</style>

@@ -1,0 +1,83 @@
+<ion-view>
+	<ion-nav-title ng-controller="titleCtrl">
+		<p style="text-transform:capitalize;font-size:16px;" ng-if="appstatus == 'student'">From Student community</p>
+		<p style="text-transform:capitalize;font-size:16px;" ng-if="appstatus == 'profession'">From Community</p>
+	</ion-nav-title>
+<ion-nav-back-button>
+<button class="button button-clear button-positive"><h2><i class="ion-arrow-left-c"></i></h2></button>
+</ion-nav-back-button>
+	<ion-content ng-controller="askingforcommunCtrl">
+	
+		<div class="list card" ng-if="appstatus == 'student'" ng-show="answer_avail" ng-repeat="x in communityans">
+
+			<div class="item item-body" style="background-color:white !important;">
+
+				<p style="color:#3c84b6"> 
+					<span style="color:black;">Question : </span> {{x.question}}<br>
+					<span style="color:black;">User Name : </span> {{x.user_name}}<br>
+					<span style="color:black;">Course : </span> {{x.course}}<br>
+					<span style="color:black;">Year(Level) : </span> {{x.year}}<br>
+					<span style="color:black;">University : </span> {{x.university}}
+
+				</p>
+				<p>
+					<a href="#/stu_provideans/{{x.id}}" class="subdued"><button class="button button-dark button-small">Provide Answers</button></a>
+					<a href="#/qwaitstudntabuse/{{x.id}}" class="subdued"><button class="button button-dark button-small" style="margin-left:80px;">Report Abuse</button></a>
+				</p>
+			</div>
+
+		</div>
+
+		<div class="list card" ng-if="appstatus == 'profession' " ng-show="answer_avail" ng-repeat="x in communityans">
+
+
+
+			<div class="item item-body" style="background-color:white !important;">
+
+				<p>
+					<span style="color:black;">Question : </span> {{x.question}}<br>
+					<span style="color:black;">User Name : </span> {{x.user_name}}<br>
+					<span style="color:black;">Profession : </span> {{x.SubProfession}}<br>
+					<span style="color:black;">Sector : </span> {{x.SubSector}}<br>
+					<span style="color:black;">Suffix : </span> {{x.suffix}}
+
+				</p>
+				<p>
+					<a href="#/fromcommprovide/{{x.id}}" class="subdued"><button class="button button-dark button-small">Provide Answers</button></a>
+					<!-- <a href="#" class="subdued">5 Comments</a> -->
+				</p>
+			</div>
+
+		</div>
+
+		<div class="item" style="background-color:white !important;" ng-show="answer_notavail">
+
+			<!-- <div class="box2" style="font-size:16px;">
+		  <h2>No Answers For this Question</h2>
+		  
+		  </div> -->
+
+
+		</div>
+		<ion-infinite-scroll distance="1%" ng-if="noMoreItemsAvailable" on-infinite="loadolder()" style="background-color:white !important;">
+		</ion-infinite-scroll>
+
+
+
+	</ion-content>
+
+		<div class="tabs">
+	  <a href="#/app/student_new" class="tab-item clr" style="background:#0065ff !important;color:#fff !important;">
+		Recent Questions
+	  </a>
+	  <a href="#/app/stu_mostresponse" class="tab-item clr" style="background:#237bff !important;color:#fff !important;">
+		Most Responses
+	  </a>
+	  <a href="#/app/stu_recents" class="tab-item clr" style="background:#0a6cff !important;color:white !important;">
+		Recently Answered
+	  </a>
+	  <a  href="#/app/stu_noans" class="tab-item clr" style="background:#3a89ff !important;color:white !important;">
+		No Answers
+	  </a>
+	</div>		
+</ion-view>

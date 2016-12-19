@@ -1,0 +1,84 @@
+<ion-view view-title="Events" >
+<ion-nav-buttons side="primary" >
+	 <a  ng-href="#/app/browse" style="display:inline-block;color:#fff;position:fixed;left:10px;top:13px;" class="button-clear">
+      <i class="icon ion-chevron-left" style="font-size:17px;"></i>
+    </a>
+ </ion-nav-buttons> 
+<ion-tabs class="tabs-light tabs-icon-top">
+
+  <ion-tab title="Upcoming" icon-on="ion-ios-alarm" icon-off="ion-ios-alarm-outline" on-select="upcoming()">
+    <!-- Tab 1 content -->
+  </ion-tab>
+
+  <ion-tab title="Current" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline" on-select="current()">
+    <!-- Tab 2 content -->
+  </ion-tab>
+
+  <ion-tab title="Past" icon-on="ion-ios-recording" icon-off="ion-ios-recording-outline" on-select="past()">
+    <!-- Tab 3 content -->
+  </ion-tab>
+
+</ion-tabs>
+
+<ion-content >
+
+
+
+
+
+
+<div class="list card" ng-repeat="x in events">
+ 
+  <div class="item item-avatar" style="     background-color: #fff !important;
+     color: #444; !important ">
+    <img src="http://www.hauduai.com.ng/{{x.image}}">
+    <h2>{{x.title}}</h2>
+    <p>Event Date:{{x.date}}</p>
+  </div>
+
+  <div class="item item-body" style="     background-color: #fff !important;
+     color: #444; !important ">
+    <img class="full-image" src="http://www.hauduai.com.ng{{x.image}}">
+    <p style="text-align:justify;">
+     {{x.description|htmlToPlaintext|removeHTMLTags}}
+    </p>
+    <p>
+      <span style="color:black;">Location:&nbsp;&nbsp;&nbsp; </span>  {{x.location}}
+    </p>
+	<p >
+      <span style="color:black;">Phone: &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  </span>   {{x.phone}}
+    </p>
+  </div>
+
+</div>
+
+</ion-content>
+<!--<div class="tabs">
+	  <a href="#/app/new" class="tab-item clr" style="background:#0065ff !important;color:#fff !important;">
+		Recent Questions
+	  </a>
+	  <a href="#/app/mostresponse" class="tab-item clr" style="background:#237bff !important;color:#fff !important;">
+		Most Responses
+	  </a>
+	  <a href="#/app/recentans" class="tab-item clr" style="background:#0a6cff !important;color:white !important;">
+		Recently Answered
+	  </a>
+	  <a  href="#/app/noans" class="tab-item clr" style="background:#3a89ff !important;color:white !important;">
+		No Answers
+	  </a>
+	</div>-->	
+</ion-view>
+</div>
+<style>
+.bar .button.back-button, .bar button.back-button {
+    display: none !important;
+    margin-right: 5px;
+    padding: 0;
+    white-space: nowrap;
+    font-weight: 400;
+}
+.bar .back-button.hide {
+     display: none !important; 
+    color: white;
+}
+</style>

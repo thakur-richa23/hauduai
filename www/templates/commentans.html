@@ -1,0 +1,77 @@
+<!-- <ion-view view-title="From Expert Answers"> -->
+
+<ion-nav-buttons side="primary">
+		<a ng-href="#/app/stu_recasked" style="display:inline-block;color:#fff;position:fixed;left:10px;top:13px;" class="button-clear">
+<i class="icon ion-chevron-left" style="font-size:17px;"></i>
+</a>
+</ion-nav-buttons>
+<ion-content ng-controller="comentansCtrl">
+
+    <div class="list">
+        <div class="item" style="margin-top:20px;">
+<div class="card">
+    <div class="item item-divider">
+        Post Your Comments
+    </div>
+    <div class="item item-text-wrap">
+        {{que.question}}?
+    </div>
+
+</div>
+
+<div class="card">
+    <div class="item item-dividerr">
+        Write your Comment
+    </div>
+    <div class="item item-text-wrap">
+        <form name="myForm" ng-submit="dooooSubmit()" class="form-group">
+            <textarea rows="3" class="text" type="text" style="width:100%;" ng-model="comments"> </textarea>
+</form>
+</div>
+<div class="item item-divider">
+    <form name="myForm" ng-submit="dooooSubmit()" class="form-group">
+        <button class="button button-small question" type="submit" style="width:-1px;height:35px; float:right;"> Submit
+</button>
+</form>
+</div>
+</div>
+
+
+<div class="card" style="margin-top:50px;" ng-repeat="que in length " ng-repeat="usr_na in length ">
+
+<div class="item item-divider">
+    <p style="color:#3c84b6;">
+
+<span style="color:black;"> &nbsp;{{usr_na}}<br>
+<span style="color:black;"> &nbsp;{{que.comment}}<br>
+
+<span style="color:black;"> </span>&nbsp;{{res.created}}
+</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<ion-infinite-scroll distance="1%" ng-if="noMoreItemsAvailable" on-infinite="loadolder()" style="background-color:white !important;">
+</ion-infinite-scroll>
+
+
+</ion-content>
+
+
+</ion-view>
+
+
+<style>
+	.bar .back-button.hide {
+		display: inherit !important;
+		color: white;
+	}
+	
+	.active {
+		background-color: #0169b0;
+	}
+
+  
+</style>

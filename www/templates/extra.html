@@ -1,0 +1,330 @@
+
+<ion-scroll  ng-controller="dropdown" class="">
+<div class="bar bar-header bar-light ">
+  <h1 class="title">Register</h1>
+</div>
+  <form  name="myForm" ng-submit="doSubmit()" class="form-group"  novalidate>
+ <div class="list has-header " style="    width: 89%;
+    margin-left: 5%;">
+ <!-- <label class="item item-input">
+    
+    <input type="text" placeholder="First Name" ng-model="fname" required>
+  </label>
+  <label class="item item-input">
+    
+    <input type="text" placeholder="Last Name" ng-model="lname" required>
+  </label>
+
+
+
+  
+  <label class="item item-input item-select">
+    <div class="input-label" style="font-size: 10px;">
+  Qualification
+    </div>
+    <select ng-Change="changed()" ng-model="quali" multiple="multiple" >
+	
+        <option value="MBA" >MBA</option>
+			
+	    <option value="PHD" >PHD</option>
+			
+		<option value="CFA" >CFA</option>
+			
+		<option value="B.Sc" >B.Sc</option>
+			
+		<option value="Other" >Other</option>
+			
+		<option value="ACIS" >ACIS</option>
+    </select>
+  </label>
+
+
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+   EMPLOYMENT STATUS
+    </div>
+    <select ng-model="emp_status">
+	<option  >Select</option>
+       <option value="Full Time Employee" >Full Time Employee</option>
+       <option value="Part Time Employee" >Part Time Employee</option>
+       <option value="Business Owner" >Business Owner</option>
+       <option value="Freelance" >Freelance</option>
+       <option value="Fresh Graduate" >Fresh Graduate</option>
+       <option value="Student" >Student</option>
+       <option value="Jobless" >Jobless</option>
+       <option value="Self Employed" >Self Employed</option>
+       <option value="NYSC" >NYSC</option>
+    </select>
+  </label>
+
+
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+   BUSINESS SECTOR
+    </div>
+    <select ng-Change="getsubsector()" ng-model="subsector">
+	  <option  disabled selected>Select</option>
+      <option ng-repeat="x in sector" value={{x.id}}>{{x.sector_category_name}}</option>
+     
+    </select>
+  </label>
+
+
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+   BUSINESS SUB SECTOR
+    </div>
+    <select ng-Change="getsubsubsector()" ng-model="subsubsector">
+	<option  >Select</option>
+      <option ng-repeat="x in sector_subcategories" value={{x.id}}>{{x.sector_sub_category_name}}</option>
+     
+    </select>
+  </label>
+
+
+
+  
+  <label class="item item-input item-select">
+    <div class="input-label">
+ PROFESSION
+    </div>
+    <select ng-Change="getsubprofession()" ng-model="subprofession">
+      <option  >Select</option>
+      <option ng-repeat="x in profession" value={{x.id}}>{{x.profession_category_name}}</option>
+    </select>
+  </label>
+  <label class="item item-input item-select">
+    <div class="input-label">
+   PROFESSIONAL AFFILIATION
+    </div>
+    <select ng-model="prof_affi">
+      <option  >Select</option>
+      <option ng-repeat="x in profession_affi" value={{x.id}}>{{x.title}}</option>
+    </select>
+  </label>
+  <label class="item item-input item-select">
+    <div class="input-label">
+   PROFESSION SUB CATEGORY
+    </div>
+    <select ng-model="prof_sub">
+      <option  >Select</option>
+      <option ng-repeat="x in profession_subcategory" value={{x.id}}>{{x.profession_sub_category_name}}</option>
+    </select>
+  </label>
+
+
+  <label class="item item-input">
+    
+    <input type="email" placeholder="Email" ng-model="email" required>
+  </label>
+  <label class="item item-input">
+    
+    <input type="password"  minlength="6" placeholder="Password" ng-model="password" required>
+  </label>
+  <label class="item item-input ">
+    
+    <input type="Password" placeholder="Confirm Password" ng-model="cpassword"required>
+  </label>
+ 
+	  <label class="item item-input item-select">
+		<div class="input-label">
+	  How Did You Know About Hauduai?
+		</div>
+		<select ng-model="gettoknow">
+		<option disabled selected>Select</option>
+		  <option value="From Google">From Google</option>
+		   <option value="From Friend">From Friend</option>
+		   <option value="From Other Search Engines">From Google</option>
+		   <option value="From Advertisement">From Advertisement</option>
+		    <option value="From Facebook">From Facebook</option>
+			 
+			 <option value="From Colleague">From Colleague</option>
+			 <option value="From Linkedin">From Linkedin</option>
+			 <option value="From Leaflet">From Leaflet</option>
+		</select>
+	  </label>
+	   <button class="button  button-outline  button-fulll button-dark  " ng-disabled="myForm.$invalid" type="submit" style="width:100%;	display: block;margin-right: 0px;
+    margin-left: 0; margin-top: 5px; margin-bottom: 5px; border-right-width: 1px;
+    border-left-width: 1px;border-radius: 4px;">
+  Register
+</button>-->
+<div class="row">
+		<div class="col col-60"> 
+			<!-- <div class=""> -->
+				<label class="item item-input">
+					<input type="text" placeholder="first Name">
+				</label>
+			<!-- </div> -->
+		</div>
+		<div class="col">
+		<!-- <div class=""> -->
+			<label class="item item-input">
+				<input type="text" placeholder="Last Name">
+			</label>
+		<!-- </div> -->
+		</div>
+	</div>
+	<div class="row">
+		<div class="col col-75">
+			<div class="list">
+				<label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp;</div>
+					<select class="sel">
+					  <option selected>Select Suffix </option>
+					  <option> Green</option>
+					  <option>Red</option>
+					</select>
+				</label>
+			</div>
+		</div>
+		<div class="col">
+			<button class="button button-block btn2">ADD</button>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col col-100">
+			
+			 <div class="list list-margin">
+
+                <label class="item item-input item-select">
+                    <div class="input-labell">
+                        &nbsp;
+                    </div>
+                    <select class="sel">
+                        <option selected>Employment status</option>
+                        <option >Green</option>
+                        <option>Red</option>
+                    </select>
+                </label>
+
+            </div>
+			<div class="list list-margin">
+				<label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp; </div>
+					<select class="sel">
+					  <option selected> Business Sector</option>
+					  <option> Green</option>
+					  <option>Red</option>
+					</select>
+				</label>
+			</div>
+			<div class="list list-margin">
+				<label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp; </div>
+					<select class="sel">
+					  <option selected> Business Sub Sector</option>
+					  <option> Green</option>
+					  <option>Red</option>
+					</select>
+				</label>
+			</div>
+			<div class="list list-margin">
+				<label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp;</div>
+					<select class="sel">
+					  <option selected>Profession </option>
+					  <option> Green</option>
+					  <option>Red</option>
+					</select>
+				</label>
+			</div>
+			<div class="list list-margin">
+				<label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp;</div>
+					<select class="sel">
+					  <option selected>Profession Affiliation</option>
+					  <option> Green</option>
+					  <option>Red</option>
+					</select>
+				</label>
+			</div>
+			<div class="list list-margin">
+				<label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp;</div>
+					<select class="sel">
+					  <option selected>Profession Sub Category</option>
+					  <option> Green</option>
+					  <option>Red</option>
+					</select>
+				</label>
+			</div>
+			<div class="list list-margin">
+				<label class="item item-input">
+					<input type="email" placeholder="Email" required >
+				</label>
+			</div>
+			<div class="list list-margin">
+				<label class="item item-input">
+					<input type="password" placeholder="Password" required>
+				</label>
+			</div>
+			<div class="list list-margin">
+				<label class="item item-input">
+					<input type="password" placeholder="Confirm Password" required>
+				</label>
+			</div>
+			<div class="list list-margin">
+				<label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp;</div>
+					<select class="sel">
+					  <option selected> How did you Know about Hauduai?</option>
+					  <option> Green</option>
+					  <option>Red</option>
+					</select>
+				</label>
+			</div>
+		</div>
+	</div>
+	
+	<!-- <div class="text-center" >
+		<a href="ask-question.html" class="button button-positive btn1">Sign up</a>
+	</div> -->
+  <button class="button  button-outline  button-fulll button-dark  " ng-disabled="myForm.$invalid" type="submit" style="width:100%;	display: block;margin-right: 0px;
+    margin-left: 0; margin-top: 5px; margin-bottom: 5px; border-right-width: 1px;
+    border-left-width: 1px;border-radius: 4px;">
+  Register
+</button>
+</form>
+
+</ion-scroll >
+<style>
+.btn2 {
+    margin: 0px!important;
+    width: 100%!important;
+    background-color: #84BC00;
+    color: #fff;
+}
+.sel{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0 48px 0 16px;
+    max-width: 100% !important;
+    border: none;
+    background: #fff;
+    color: #333;
+    text-indent: .01px;
+    text-overflow: '';
+    white-space: nowrap;
+    font-size: 14px;
+    cursor: pointer;
+    direction: ltr !important;
+    width: 100% !important;
+}
+.input-labell {
+    display: table;
+    padding: 7px 10px 7px 0px;
+    max-width: 200px;
+    width: 0%;
+    color: #444;
+    font-size: 16px;
+}
+</style> 

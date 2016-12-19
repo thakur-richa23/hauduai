@@ -1,0 +1,101 @@
+<ion-view view-title="No Answers">
+ 
+<ion-content  ng-controller="noansCtrl">
+<br>
+ <div class="list" style="margin-top: 20px !important;
+    margin-left: 2% !important;margin-bottom:33px !important;">
+		<div class="item " style="background-color:white !important;color:#444 !important;" ng-repeat="x in listtquee">
+		 <a  href="#/app/questioncomm/{{x.id}}"> <img src="http://hauduai.com.ng/{{x.user_image | imageempty}}" style="  border-radius: 60px !important;
+    /* width: 35%; */
+    float: left !important;
+    position: absolute !important;
+    top: 10px !important;
+    left: 10px !important;
+    max-width: 40px !important;
+    max-height: 40px !important;
+    width: 100% !important;
+    height: 100% !important;">
+		  <div class="box1" style="    float: right !important;
+    width: 42% !important;
+    margin-right: 32% !important;">
+		  <h2>{{x.user_name}}</h2><br>
+		  <p>{{x.question}}</p>
+		  </div></a>
+		  <div class="box" style="float: right !important;
+    width: 1% !important;
+    margin-right: -35% !important;font-size:12.6px; margin-top:-15px;">
+		   <!-- <a class="question" href="#/app/questioncomm/{{x.id}}">Question</a> -->
+		  <a class="respond" href="#/app/anscomm/{{x.id}}">Provide Answer</a>
+		  </div>
+		  <div class="row">
+			<p style="margin-top:23px;">{{x.created | dateago}} &nbsp;
+			<span><a href="#/app/que_noanswer/{{x.id}}">View Answers</a><span></p>
+				&nbsp;			
+			<p style="margin-top:23px;">Views:{{x.views}}</p> &nbsp;
+			<p><ul class="share-buttons">
+  <li><a ng-href="http://www.facebook.com/sharer/sharer.php?u=&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + 'https://shar.es/1EM998' + '&t=' + 'Hauduai'); return false;"><img class="abcc" src="img/Facebook.png" style="width:53px; height:23px;"></a></li>
+	<li><a ng-href="http://twitter.com/intent/tweet?source=&text=" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet'); return false;"><img class="abcc" src="img/Twitter.png" style="width:53px; height:23px;"></a></li>
+  <!--<li><a ng-href="http://twitter.com/intent/tweet?source=&text=:%20" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img class="abcc" src="img/Twitter.png" style="width:53px; height:23px;"></a></li>-->
+  <li><a ng-href="http://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source=" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img class="abcc" src="img/LinkedIn.png" style="width:53px; height:23px;"></a></li>
+    </ul></p>
+		  </div>
+		</div>
+		
+		
+	</div> 
+	
+	
+	  <ion-infinite-scroll  distance="1%"  ng-if="noMoreItemsAvailable" on-infinite="loadolder()" style="background-color:white !important;" >
+  </ion-infinite-scroll>
+	    
+	
+	
+</ion-content>
+	<div class="tabs">
+	  <a href="#/app/new" class="tab-item clr" style="background:#0065ff !important;color:#fff !important;">
+		Recent Questions
+	  </a>
+	  <a href="#/app/mostresponse" class="tab-item clr" style="background:#237bff !important;color:#fff !important;">
+		Most Responses
+	  </a>
+	  <a href="#/app/recentans" class="tab-item clr" style="background:#0a6cff !important;color:white !important;">
+		Recently Answered
+	  </a>
+	  <a  href="#/app/noans" class="tab-item clr" style="background:#3a89ff !important;color:white !important;">
+		No Answers
+	  </a>
+	</div>
+<!-- <div class="tabs">
+	  <a href="#/app/new" class="tab-item clr">
+		Recent Questions
+	  </a>
+	  <a href="#/app/mostresponse" class="tab-item clr">
+		Most Responses
+	  </a>
+	  <a href="#/app/recentans" class="tab-item clr">
+		Recently Answered
+	  </a>
+	  <a  href="#/app/noans" class="tab-item clr active">
+		No Answers
+	  </a>
+	</div> -->
+</ion-view >
+
+<style>
+ .bar .back-button.hide {
+    display: inherit !important;
+	color:white;
+} 
+.active{
+	background-color:#0169b0;
+}
+
+ul.share-buttons{
+  list-style: none;
+  padding: 0;
+}
+
+ul.share-buttons li{
+  display: inline;
+}
+</style>

@@ -1,0 +1,94 @@
+
+<ion-view view-title="Ask Student Community" class="a">
+
+<ion-content ng-controller="stuask_commCtrl">
+<form name="myForm">
+
+<br><br>
+<div class="border">
+		<textarea class="text" cols="40" ng-model="que" ng-model="{{qu}}" maxlength="{{qu}}" placeholder="Type your question here.."  required></textarea> 
+	
+</div>
+<div style="float:left;font-size:14px;margin-left:10px;">Characters Left: &nbsp;</div><div style="color:red;float:left;font-size:14px;">   {{qu-que.length}}</div>
+    </div>
+
+<br>
+<div class="pad">
+		<div class="list">
+			<label class="item item-input item-select">
+			<div class="input-label" style="margin-right:10px;">
+				&nbsp;
+			</div>
+			
+			  
+			<select id = "facultyName" ng-Change="changed()" ng-model="studentfac" required style="color:#333;">
+			<option value="">Select Faculty</option>
+			  <option ng-repeat="x in faculty" value="{{x.id}}">{{x.faculty_name}}</option>
+			</select>
+			</label>
+		</div>
+		<div class="list"  ng-show="stu_fac_show">
+			<label class="item item-input item-select">
+			<div class="input-label">
+				&nbsp;
+			</div>
+		
+			  
+			  <select id = "courseName" ng-Change="changged()" ng-model="stu_f_field" style="color:#333;">
+			  <option value="">Select Course</option> 
+			   <option ng-repeat="x in couurse" value="{{x.id}}">{{x.course_name}}</option>
+			</select>
+			</label>
+		</div>	
+		<div class="list" >
+			<label class="item item-input item-select">
+			<div class="input-label">
+				&nbsp;
+			</div>
+		
+			  
+			 <select id = "yearName" ng-Change="changedsector()" ng-model="stu_level_field" style="color:#333;">
+			 <option value="">Select Level (Year)</option>
+			  <option ng-repeat="x in level_y" value="{{x.id}}">{{x.year_level}}</option>
+			</select>
+			</label>
+		</div>	
+		<div class="list" ng-show="stu_facu_show" >
+			<label class="item item-input item-select">
+			<div class="input-label">
+				&nbsp;
+			</div>
+		
+			  
+			 
+			  <select id = "uniName" ng-model="sf" ng-Change="changedsector()" style="color:#333;"> 
+			<option value="">Select University(Optional)</option>
+			   <option ng-repeat="x in uni" value="{{x.id}}">{{x.university_name}}</option>
+			</select>
+			</label>
+		</div>
+		
+		
+		<br>
+		
+		
+		<div class="text-center">
+		<button class="ask" ng-disabled="" ng-click="submitt_stucomm_que()" style="margin-left:-20px;border-radius:10px;">Ask Student Community</button>
+		<a class="ask" href="#/app/browse" style="background:red;color:white;border-radius:9px;margin-right:12px;margin-top:1px;">Back</a>
+	</div>
+</form>
+</ion-content>
+</ion-view >
+<style>
+.item-dividerr{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    min-height: 30px;
+    background-color: deepskyblue;
+    color: #222;
+    font-weight: 500;
+}
+.a{
+	text-align:center !important;
+}
+</style>

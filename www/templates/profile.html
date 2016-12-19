@@ -1,0 +1,119 @@
+<ion-view view-title="Profile">
+<ion-nav-buttons side="primary" >
+	 <a  ng-href="#/app/browse" style="display:inline-block;color:#fff;position:fixed;left:10px;top:13px;" class="button-clear">
+      <i class="icon ion-chevron-left" style="font-size:17px;"></i>
+    </a>
+ </ion-nav-buttons>
+<ion-content ng-controller="proCtrl">
+ <!-- <ion-scroll direction="xy"> -->
+ <div ng-if="prof.type=='user'">
+ <br>
+ <!-- <a ng-href="http://www.hauduai.com.ng/index/stepp3/{{uid}}"  target="" onclick="window.open('http://www.hauduai.com.ng/index/stepp3/{{uid}}') return false;">Edit Profile</a> -->
+ <a ng-href="#"  target="_blank" ng-click="triggerCall('{{uid}}')"><button  style="background:#0169b0;color:white;padding:6px;height:33px;border-radius:8px;margin-left:4px; margin-top:-10px;">Edit Profile</button></a>
+ <!--<a   onclick="window.open('http://www.hauduai.com.ng/index/stepp3/{{uid}}' +  return false;"><button  style="background:#0169b0;color:white;padding:6px;height:33px;border-radius:8px;margin-left:4px; margin-top:-10px;">Edit Profile</button></a>-->
+  <!-- <a ng-href="http://www.hauduai.com.ng/user_profile"><button  style="background:#0169b0;color:white;padding:10px;height:41px;border-radius:8px;margin-left: 4px;">Edit Profile</button></a> -->
+  <br>
+  <!--<a ng-href="http://www.hauduai.com.ng/index/stepp3/{{uid}}" target="" onclick="window.open('http://www.hauduai.com.ng/index/stepp3/' + {{uid}} return false;"><button  style="background:#0169b0;color:white;padding:6px;height:33px;border-radius:8px;margin-left:4px; margin-top:-10px;">Edit Profile</button></a>-->
+
+	<img src="http://hauduai.com.ng/{{prof.user_image}}" style="width:85px;height:85px;margin-left:5px;margin-top:5px;border-radius:50px;"/>
+	
+	<div class="abc" style="margin-left:106px;margin-top:-60px;font-size:15px;color:#606060;font-style:italic;">
+	{{prof.full_name}}
+	<br>
+	<br>
+
+	<!-- {{prof.type}} -->
+	
+  </div>
+  <br>
+	 
+	
+	 <h5 style="color:#3c84b6; margin-bottom:2px;margin-left:8px;"><span style="color:black;font-size:15px;"> Registered Date : </span> {{prof.registered}}</h5><hr>
+	
+	   <!-- <h4 style="color:#9ea2aa;"><span style="color:black;font-size:18px;"> Status : </span> {{prof.status}}</h4><hr>  -->
+
+       <h5 style="color:#3c84b6;margin-bottom:2px;margin-left:8px;"><span style="color:black;font-size:15px;"> E-mail ID : </span>{{prof.email}}</h5><hr>
+			 <h5 style="color:#3c84b6;margin-bottom:2px;margin-left:8px;"><span style="color:black;font-size:15px;"> Status : </span> {{prof.status}}</h5><hr>
+	  
+	  
+			<!-- <span style="color:#cdc9ff;font-size:17px;"> Type:-</span> {{prof.type}}<br><br> -->
+			
+			<h5 style="color:#3c84b6;margin-bottom:2px;margin-left:8px;"><span style="color:black;font-size:15px;">Suffixes : </span> {{prof.suffix}}</h5><hr> 
+			  <h5 style="color:#3c84b6;margin-bottom:2px;margin-left:8px;"><span style="color:black;font-size:15px;">Employment Status : </span> {{prof.employment_status}}</h5><hr>
+			  <h5 style="color:#3c84b6;margin-bottom:2px;margin-left:8px;"><span style="color:black;font-size:15px;"> Sector : </span>  {{prof.selection_area1}}</h5><hr>
+			  <h5 style="color:#3c84b6;margin-bottom:2px;margin-left:8px;"><span style="color:black;font-size:15px;">Sub Sector : </span>  {{prof.selection_area1_sub}}</h5><hr>
+			  <h5 style="color:#3c84b6;margin-bottom:2px;margin-left:8px;"><span style="color:black;font-size:15px;">Profession : </span>  {{prof.selection_area2}}</h5><hr>
+			  <h5 style="color:#3c84b6;margin-bottom:2px;margin-left:8px;"><span style="color:black;font-size:15px;">Sub Profession : </span> {{prof.selection_area2_sub}}</h5><hr>
+			  <h5 style="color:#3c84b6;margin-bottom:2px;margin-left:8px;"><span style="color:black;font-size:15px;">Professional Affiliaton : </span> {{prof.prof_aff}}</h5><hr>
+    	
+	</div>
+	
+	<div ng-if="prof.type=='specialist'">
+	
+	<a ng-href="#"  target="_blank" ng-click="triggerCall('{{uid}}')" ><button  style="background:#0169b0;color:white;padding:6px;height:33px;border-radius:8px;margin-left:4px; margin-top:8px;">Edit Profile</button></a>
+	 <!-- <a ng-href="http://www.hauduai.com.ng/user_profile"><button  style="background:#0169b0;color:white;padding:10px;height:41px;border-radius:8px;margin-left: 4px;">Edit Profile</button></a> -->
+	 <br>
+	 
+	<img src="http://hauduai.com.ng/{{prof.user_image}}" style="width:85px;height:85px;margin-left:5px;margin-top:5px;border-radius:50px;"/>
+	
+	<div class="abc" style="margin-left:135px;margin-top:-60px;font-size:15px;color:#606060;font-style:italic;">
+	{{prof.full_name}}<br>
+	<!-- {{prof.type}} -->
+	
+  </div>
+	  
+	  <br>
+	 <h5 style="color:#3c84b6; margin-bottom:-3px;margin-left:8px;"><span style="color:black;font-size:15px;"> Registered Date : </span> {{prof.registered}}</h5><hr>
+	
+	 
+
+       <h5 style="color:#3c84b6;margin-bottom:2px;margin-left:8px;"><span style="color:black;font-size:15px;"> E-mail ID : </span> {{prof.email}}</h5><hr>
+			<h5 style="color:#3c84b6;margin-bottom:2px;margin-left:8px;"><span style="color:black;font-size:15px;"> Status : </span> {{prof.status}}</h5><hr>
+
+	  
+	 <!--  #9ea2aa    <button ng-click="edit()" style="background:#0169b0;color:white;padding:10px;height:41px;border-radius:8px;margin-left: 25px;">Edit Profile</button>  -->
+			<!-- <span style="color:#cdc9ff;font-size:17px;"> Type:-</span> {{prof.type}}<br><br> -->
+			
+			<h5 ng-model="suffi" style="color:#3c84b6;margin-bottom:2px;margin-left:8px;"><span style="color:black;font-size:15px;">Suffixes : </span> {{prof.suffix}}</h5><hr> 
+			  <h5 style="color:#3c84b6;margin-bottom:2px;margin-left:8px;"><span style="color:black;font-size:15px;">Employment Status : </span> {{prof.employment_status}}</h5><hr>
+			  <h5 style="color:#3c84b6;margin-bottom:2px;margin-left:8px;"><span style="color:black;font-size:15px;">Expertise Field1 : </span>  {{prof.selection_area1}}</h5><hr>
+			  <h5 style="color:#3c84b6;margin-bottom:2px;margin-left:8px;"><span style="color:black;font-size:15px;">Expertise Sub Field1 : </span>  {{prof.selection_area1_sub}}</h5><hr>
+			  <h5 style="color:#3c84b6;margin-bottom:2px;margin-left:8px;"><span style="color:black;font-size:15px;">Expertise Field2 : </span>  {{prof.selection_area2}}</h5><hr>
+			  <h5 style="color:#3c84b6;margin-bottom:2px;margin-left:8px;"><span style="color:black;font-size:15px;">Expertise Sub Field2 : </span> {{prof.selection_area2_sub}}</h5><hr>
+			  <h5 style="color:#3c84b6;margin-bottom:2px;margin-left:8px;"><span style="color:black;font-size:15px;">Professional Affiliaton : </span> {{prof.prof_aff}}</h5><hr>
+    	
+	</div>
+			
+		<!-- <span style="color:#cdc9ff;font-size:17px;"> Name:-</span> {{prof.full_name}}<br><br> -->
+			
+			
+		
+	
+ 
+<!-- </ion-scroll> -->
+</ion-content>
+<!--<div class="tabs" >
+	  <a href="#/app/new" class="tab-item clr" style="background:#0065ff !important;color:#fff !important;">
+		Recent Questions
+	  </a>
+	  <a href="#/app/mostresponse" class="tab-item clr" style="background:#237bff !important;color:#fff !important;">
+		Most Responses
+	  </a>
+	  <a href="#/app/recentans" class="tab-item clr" style="background:#0a6cff !important;color:white !important;">
+		Recently Answered
+	  </a>
+	  <a  href="#/app/noans" class="tab-item clr" style="background:#3a89ff !important;color:white !important;">
+		No Answers
+	  </a>
+	</div>	-->
+</ion-view>
+	<style>
+		.mn
+			{
+				background:white !important;
+				}
+		.colorchn{
+		color:#606060;
+		}		
+				
+</style>

@@ -1,0 +1,136 @@
+<ion-content overflow-scroll="true">
+<div class="list cardd">
+
+ 
+
+  <div class="itemm item-body">
+    <img class="full-image" src="img/howdo.png">
+    
+  </div>
+
+</div>
+<div class="body" ng-controller="AppCtrl" style="margin-top:-35px;"> 
+<h1 class="title">About Hauduai?</h1>
+<img class="full-image" src="http://www.hauduai.com.ng/{{header_text_with.image}}" alt="">
+	<p class="about"  style="text-align:justify;">{{header_text.header_text|htmlToPlaintext}}</p>
+	<!-- <p class="about"  style="text-align:justify;">{{header_text.image}}</p> -->
+	<h1 class="title" style="font-size:24px;">How It Works? </h1>
+	<a ng-href="#" onclick="window.open('http://www.hauduai.com.ng/pages/how-it-works', '', 'location=yes');return false;" style="font-size:14px;">http://www.hauduai.com.ng/pages/how-it-works</a> 
+	
+	<br>
+	<br>
+    <ion-list>
+	<div class="text-center" style="margin-left:15px;">
+	
+      <button class="button buttonn-outline butt buttonn-dark" ng-click="login()" style="margin-left:10px;">Login</button>
+	<a href="#/register" class="linkk"><button class="button buttonn-outline  but buttonn-dark" style="padding:2px;">Register As Member</button></a>
+  <a href="#/registerspecial" class="linkk1"><button class="button buttonn-outline  buttt buttonn-dark" style="margin-left:10px;">Register As Expert </button></a>
+	  </div>
+    </ion-list>
+	<br>
+	<div class="text-center" style="font-size:14px;">
+	<p>Powered By: www.hauduai.com.ng</p>
+	</div>
+   </div> 
+ </ion-content>
+<style>
+
+.but{
+    display: block;
+    margin-right: 0;
+    margin-left: 6%;
+	padding:5px;
+   
+    border-radius: 10px;
+	width:168px;
+	margin-top:10px;
+	color:#fff;
+	
+	background-color: #26378f;
+
+}
+.butt{
+    display: block;
+    margin-right: 0;
+    margin-left: 20%;
+   
+    border-radius: 10px;
+	width:82px;
+	margin-top:10px;
+	color:#fff;
+	float:left;
+	background-color: #ee1c25;
+
+}
+.margin{
+	margin-top:20%;
+	margin-bottom:10%;
+}
+  .pane{
+  background-image:url("img/bg.png"); 
+
+} 
+.cardd{
+    padding-top: 1px;
+    padding-bottom: 1px;
+  
+    overflow: hidden;
+    margin: 20px 10px;
+    border-radius: 2px;
+    background:transparent;
+}
+.itemm{
+
+	   
+    /* background-color: #fff; */
+    color: #444;
+    position: relative;
+    z-index: 2;
+    display: block;
+    margin: -1px;
+    padding: 16px;
+   
+    font-size: 16px;
+}
+.buttonn.buttonn-dark.buttonn-outline {
+    /* border-color: #444; */
+    /* background: transparent; */
+    color: #fff;
+    background-color: #26378f;
+}
+.title {
+    font-size: 24px;
+    color: #333;
+}
+.about {
+    font-size: 14px;
+    color: #0169b0;
+    padding-left: 10px;
+}
+.link {
+    font-size: 14px;
+    padding-left: 10px;
+    margin: 0px;
+}
+.linkk1{
+color: #387ef5;
+text-decoration:none;
+
+}
+.linkk{
+color: #387ef5;
+text-decoration:none;
+float:left;
+    margin-bottom: 8px;
+}
+.buttt {
+    display: block;
+    margin-right: 0;
+    margin-left: 20%;
+    border-radius: 10px;
+    width: 259px;
+    margin-top: 10px;
+    color: #fff;
+    background-color: #26378f;
+}
+</style>

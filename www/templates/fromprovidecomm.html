@@ -1,0 +1,101 @@
+<div >
+<ion-view view-title="From Community Answers">
+ <div class="bar bar-header bar-positive">
+  <h1 class="title">From Community Answers</h1>
+  <a href="#/app/askforcomm"><button class="button button-clear button-positive" ng-click="gobaacck()"><h2><i class="ion-arrow-left-c" style="margin-right:45px;"></i></h2></button></a>
+  
+</div>
+<ion-content ng-controller="ProvidecommunAnsCtrl">
+
+ <div class="list">
+		<div class="item" style="background-color:white !important;margin-top:55px;">
+		<div class="row">
+			<!-- <img src="img/timthumb.jpg">&nbsp&nbsp; -->
+		      <h2><span style="color:blue;font-size:17px;">The Question :</span> {{get_questionnn[0].question}}</h2>
+			</div>
+			<form  name="myForm" ng-submit="Submittcomm()" class="form-group"  novalidate>
+		    <!--<div class="item item-input-inset" style="background-color:white !important;">
+			 <div class="border">
+		<textarea class="text" cols="20"  ng-model="anstyped" ng-model="{{qu}}" maxlength="{{qu}}" placeholder="Type your answer here.." ></textarea> 
+	                      	
+
+	
+</div> 
+	
+				<!-- <label class="item-input-wrapper"> 
+				  <textarea row="30" col="8" class="full-width" ng-model="answertyped" placeholder="Answers"></textarea>
+				 </label>                                             
+				<button class="button button-small question" ng-disabled="myForm.$invalid" type="submit" style="width:-1px;height:35px;">
+				  Submit
+				</button>
+			
+			</div> --> 
+
+			
+				<div class="row">
+					<div class="border">
+		<textarea class="text" cols="42" rows="10" ng-model="anstyped" ng-model="{{qu}}" maxlength="{{qu}}" placeholder="Type your answer here.." ></textarea> 
+					</div>
+					</div>
+				
+			</form>																						
+			<div style="color:#5d5860;float:left"><span style="color:black;font-size:16px;">Characters Left: &nbsp;</span> {{qu-anstyped.length}}  </div>
+			<!-- <div class="row">
+			  <a href="#/app/questioncomm/{{aa}}">  <p><span>The Answer<span>: {{count_answeres}}</p></a>
+		    </div> -->
+		<form  name="myForm" ng-submit="Submittcomm()" class="form-group"  novalidate>
+		<div class="row">
+			<button class="button button-small question" ng-disabled="myForm.$invalid" type="submit" style="width:-1px;height:35px;">
+				  Submit
+				</button>
+			</div>
+		</form>	
+	</div>	
+	</div>
+	
+	
+	
+	
+</ion-content>
+<div class="tabs">
+	  <a href="#/app/new" class="tab-item clr" style="background:#0065ff !important;color:#fff !important;">
+		Recent Questions
+	  </a>
+	  <a href="#/app/mostresponse" class="tab-item clr" style="background:#237bff !important;color:#fff !important;">
+		Most Responses
+	  </a>
+	  <a href="#/app/recentans" class="tab-item clr" style="background:#0a6cff !important;color:white !important;">
+		Recently Answered
+	  </a>
+	  <a  href="#/app/noans" class="tab-item clr" style="background:#3a89ff !important;color:white !important;">
+		No Answers
+	  </a>
+	</div>	
+</ion-view>
+</div>
+<!-- <div class="tabs">
+	  <a href="#/app/new" class="tab-item clr">
+		Recent Questions
+	  </a>
+	  <a href="#/app/mostresponse" class="tab-item clr">
+		Most Responses
+	  </a>
+	  <a href="#/app/recentans" class="tab-item clr active">
+		Recently Answered
+	  </a>
+	  <a  href="#/app/noans" class="tab-item clr">
+		No Answers
+	  </a>
+	</div> -->
+
+
+<style>
+ .bar .back-button.hide {
+    display: inherit !important;
+	color:white;
+} 
+.active{
+	background-color:#0169b0;
+}
+
+</style>

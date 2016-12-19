@@ -1,0 +1,140 @@
+<!-- <ion-view view-title="From Expert Answers"> -->
+
+<div class="bar bar-header bar-positive">
+	<h1 class="title">Provide Answers</h1>
+	<a href="#/app/quiz"><button class="button button-clear button-positive" ng-click="gobaacck()"><h2><i class="ion-arrow-left-c" style="margin-right:45px;"></i></h2></button></a>
+
+</div>
+<ion-content ng-controller="quiz_stuProvideAnsCtrl">
+
+	<div class="list">
+		<div class="item" style="margin-top:20px;">
+			<div class="card">
+				<div class="item item-divider" style="background-color:#3c84b6;">
+					Quiz Question
+				</div>
+				<div class="item item-text-wrap">
+					{{get_questionnn_expert[0].quiz_question}}?
+				</div>
+
+			</div>
+			<!-- 	<form name="myForm" ng-submit="lec_dooSubmit()" class="form-group" novalidate>
+			<div class="item item-input-inset" style="background-color:white !important;">
+			 <div class="border">
+		<textarea class="text" cols="20"  ng-model="answerty"  maxlength="{{qu}}" placeholder="Type your answer here.." ></textarea> 
+		
+
+	
+</div> 
+	
+				<label class="item-input-wrapper"> 
+				  <textarea row="30" col="8" class="full-width" ng-model="answertyped" placeholder="Answers"></textarea>
+				 </label>                                        
+				<button class="button button-small question" ng-disabled="myForm.$invalid" type="submit" style="width:-1px;height:35px;">
+				  Submit
+				</button>
+			
+			</div>
+
+				<div class="row">
+					<div class="border">
+						<textarea class="text" cols="42" rows="10" ng-model="answerty" ng-model="{{qu}}" maxlength="{{qu}}" placeholder="Type your answer here.."></textarea>
+					</div>
+				</div>
+			</form>  -->
+			<div class="card" ng-if= "user == 'student'">
+				<div class="item item-dividerr" style="background-color:#3c84b6;">
+					Write your Answer
+				</div>
+				<div class="item item-text-wrap">
+          <form name="myForm" ng-submit="dooSubmit()" class="form-group">
+					<textarea rows="3" class="text" style="width:100%;" ng-model="quizz_answer"> </textarea>
+          </form>
+				</div>
+				<div class="item item-divider">
+          <form name="myForm" ng-submit="dooSubmit()" class="form-group">
+					<button class="button button-small question" type="submit" style="width:-1px;height:35px; float:right;">
+				  Submit
+				</button>
+        </form>
+				</div>
+			</div>
+
+			
+			<div class="card" style="margin-top:50px;" ng-repeat="res in length ">
+
+				<div class="item item-divider">
+          <p style="color:#3c84b6;">
+					<span style="color:black;"> Answer: </span>&nbsp;{{res.answer}}<br>
+          <span style="color:black;"> Name of User: </span>&nbsp;{{res.user_name}}<br>
+          <span style="color:black;"> Course: </span>&nbsp;{{res.course}}<br>
+          <span style="color:black;"> Year(Level): </span>&nbsp;{{res.year}}<br>
+          <span style="color:black;"> University: </span>&nbsp;{{res.university}}<br>
+          <span style="color:black;"> Time and Date Posted: </span>&nbsp;{{res.created}}
+          </p>
+				</div>
+			</div>
+			<!-- 	<div style="color:#5d5860;float:left"><span style="color:black;font-size:16px;">Characters Left: &nbsp;</span> {{qu-answerty.length}} </div>
+			<div class="row">
+			  <a href="#/app/questioncomm/{{aa}}">  <p><span>The Answer<span>: {{count_answeres}}</p></a>
+		    </div>
+			<form name="myForm" ng-submit="lec_dooSubmit()" class="form-group" novalidate>
+				<div class="row">
+					<button class="button button-small question" ng-disabled="myForm.$invalid" type="submit" style="width:-1px;height:35px;">
+				  Submit
+				</button>
+				</div>
+			</form> -->
+		</div>
+	</div>
+
+<ion-infinite-scroll distance="1%" ng-if="noMoreItemsAvailable" on-infinite="loadolder()" style="background-color:white !important;">
+		</ion-infinite-scroll>
+
+
+</ion-content>
+
+<!--<div class="tabs">
+	  <a href="#/app/new" class="tab-item clr" style="background:#0065ff !important;color:#fff !important;">
+		Recent Questions
+	  </a>
+	  <a href="#/app/mostresponse" class="tab-item clr" style="background:#237bff !important;color:#fff !important;">
+		Most Responses
+	  </a>
+	  <a href="#/app/recentans" class="tab-item clr" style="background:#0a6cff !important;color:white !important;">
+		Recently Answered
+	  </a>
+	  <a  href="#/app/noans" class="tab-item clr" style="background:#3a89ff !important;color:white !important;">
+		No Answers
+	  </a>
+	</div>-->
+</ion-view>
+
+<!-- <div class="tabs">
+	  <a href="#/app/new" class="tab-item clr">
+		Recent Questions
+	  </a>
+	  <a href="#/app/mostresponse" class="tab-item clr">
+		Most Responses
+	  </a>
+	  <a href="#/app/recentans" class="tab-item clr active">
+		Recently Answered
+	  </a>
+	  <a  href="#/app/noans" class="tab-item clr">
+		No Answers
+	  </a>
+	</div> -->
+
+
+<style>
+	.bar .back-button.hide {
+		display: inherit !important;
+		color: white;
+	}
+	
+	.active {
+		background-color: #0169b0;
+	}
+
+  
+</style>

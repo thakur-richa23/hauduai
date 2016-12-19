@@ -1,0 +1,71 @@
+<div ng-controller="byycommanswerCtrl" >
+<div class="bar bar-header bar-positive">
+ <button class="button button-clear button-positive" ng-click="gooback()"><h2><i class="ion-arrow-left-c"></i></h2></button>
+  <h1 class="title">Answer</h1>
+</div>
+
+<ion-content  class="has-subheader">
+  
+
+<div class="card " ng-show="alterr">
+<span style="color:black;font-size:17px;margin-left:12px;">Question:</span>
+  <div class="item item-text-wrap" style="background:white;color:#6b6b6b;">
+    {{commanswer[0].question}}
+    {{commanswer.user_name}}
+	
+  </div>
+</div>
+
+<div class="card " ng-repeat="x in commanswer">
+<!-- <span style="color:red;font-size:17px;margin-left:12px;">Answer:</span> -->
+  <div class="item item-text-wrap" style="background:white !important;color:#6b6b6b !important;font-size:15px !important;">
+	<span class="abc">Expert Name : </span> {{x.user_name}}<br>
+   <span class="abc">Answer : </span> {{x.answer|htmlToPlaintext|removeHTMLTags}}<br>
+    <span class="abc">Subject Matter : </span> {{x.community}}<br>
+   
+    
+    <span class="abc">Suffix : </span> {{x.sector}}<br>
+	<span class="abc">Rate Button : </span> {{x.views}}
+    
+  </div>
+</div>
+<div class="card " ng-show="alterer">
+  <div class="item item-text-wrap" style="background:white;color:#cdc9ff;">
+    No Answer To this question right now.
+  </div>
+</div>
+
+
+
+  </ion-content>
+
+</div>
+<style>
+.abc{
+	font-size:16px;color:black;
+
+}
+
+
+</style>
+<!-- 
+<ion-view view-title="Result">
+  <ion-content ng-controller="que_ansCtrl" class="has-subheader">
+  
+
+<div class="card ">
+  <div class="item item-text-wrap" >
+    {{qu_an[0].question}}
+  </div>
+</div>
+<div class="card " ng-repeat="x in qu_an">
+  <div class="item item-text-wrap" >
+    {{x.answer}}
+  </div>
+</div>
+
+
+
+
+  </ion-content>
+</ion-view> -->

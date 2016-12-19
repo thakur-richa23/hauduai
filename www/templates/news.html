@@ -1,0 +1,116 @@
+<ion-view view-title="News">
+ 
+ <!--  <a href="#/app/playlists">    <button class="button has-header"  >
+<i class="ion-arrow-left-a"></i>
+      </button></a> -->
+    <ion-nav-buttons side="primary" >
+        <a  ng-href="#/app/browse" style="display:inline-block;color:#fff;position:fixed;left:10px;top:13px;" class="button-clear">
+        <i class="icon ion-chevron-left" style="font-size:17px;"></i>
+        </a>
+    </ion-nav-buttons>
+    
+<ion-content ng-controller="newsCtrl">
+
+ 
+
+<div class="list card" ng-repeat="x in news">
+
+  <div class="item item-avatar" style="background-color: #fff !important; 
+     color: #444 !important;">
+    <img src="http://www.hauduai.com.ng/{{x.image}}">
+    <h2>{{x.news_title}}</h2>
+    <p>{{x.created}}</p>
+  </div>
+
+  <div class="itemm item-body">
+    <img class="full-image" src="http://www.hauduai.com.ng/{{x.image}}">
+    <p style="text-align:justify;">
+     {{x.title_detail}}<br>
+     <a href="http://www.hauduai.com.ng/news/news_url" target="_blank" onclick="window.open('http://www.hauduai.com.ng/news/news_url');">{{x.news_url}}</a>
+    </p>
+    <p >
+        <a href="#" class="subdued" >Profession :{{x.profession}}</a>
+    </p>
+    <p>  
+        <a href="#" class="subdued">Sector :{{x.sector}}</a>
+    </p>
+  </div>
+
+</div>
+</ion-content>
+<div class="tabs">
+	  <a href="#/app/new" class="tab-item clr" style="background:#0065ff !important;color:#fff !important;">
+		Recent Questions
+	  </a>
+	  <a href="#/app/mostresponse" class="tab-item clr" style="background:#237bff !important;color:#fff !important;">
+		Most Responses
+	  </a>
+	  <a href="#/app/recentans" class="tab-item clr" style="background:#0a6cff !important;color:white !important;">
+		Recently Answered
+	  </a>
+	  <a  href="#/app/noans" class="tab-item clr" style="background:#3a89ff !important;color:white !important;">
+		No Answers
+	  </a>
+	</div>	
+</ion-view >
+<style>
+.itemm{
+    border-color: #ddd !important;
+    background-color: #fff !important;
+    color: #444 !important;
+    position: relative !important;
+    z-index: 2 !important;
+    display: block !important;
+    margin: -1px !important;
+    padding: 16px !important;
+    border-width: 1px !important;
+    /* border-style: solid; */
+    font-size: 16px !important;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+<!--  .card .itemm:first-child, .list-inset .itemm:first-child {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+.card .itemm:first-child {
+    border-top: 0;
+}
+.card .itemm {
+    margin-right: 0;
+    margin-left: 0;
+}
+.card .itemm:first-child {
+    border-top: 0;
+}
+.card .itemm {
+    margin-right: 0;
+    margin-left: 0;
+}
+.card .itemm {
+    margin-right: 0;
+    margin-left: 0;
+}
+.card .itemm {
+    border-left: 0;
+    border-right: 0;
+}  
+.itemm h2 {
+    margin: 0 0 2px 0;
+    font-size: 16px;
+    font-weight: normal;
+	    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}  -->
+.item {
+     background-color: #fff !important; 
+     color: #444; 
+}
+
+.title-left{
+    text-align: center !important;
+    color: #fff !important;
+}
+</style>

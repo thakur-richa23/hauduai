@@ -1,0 +1,55 @@
+<ion-view view-title="Refer An Expert">
+  <!--<ion-nav-back>
+  </ion-nav-back>-->
+  
+  <ion-content ng-controller="referanexpertctrl">
+  <form  name="myForm" ng-submit="submitt()" class="form-group"  novalidate>
+  
+  
+
+				<h3 style="text-align:center;margin-top:10px;">Who Are You Referring ?</h3><br>
+				<div class="row">
+					<div class="col col-70">
+						<h4>Email-id</h4>
+					</div>
+					<div class="col col-30">
+						<input type="email" ng-model="temail" placeholder="Type Email Here.." style="font-size:initial;border-color:black;"><br>
+					</div>
+				</div><br>
+				<div class="row">
+					<div class="col col-70">
+						<h4>Name Of Expert</h4>
+					</div>
+					<div class="col col-30">
+						<input type="text" ng-model="namee" placeholder="Type Expert Name Here." style="font-size:initial;border-color:black;"><br>
+					</div>
+				</div><br>
+				<div class="row">
+					<div class="col col-70">
+						<h4>Mobile Number</h4>
+					</div>
+					<div class="col col-30">
+						<input type="text" ng-model="numberr" placeholder="Type Mobile Number." style="font-size:initial;border-color:black;">
+					</div>
+				</div><br>
+				<br>
+		<button type="submit" style="float:right;margin-right:10px;font-size:15px;height:50px;width:83px;background:#0169b0;color:white;">Submit</button>
+</form>
+
+
+  </ion-content>
+  <div class="tabs">
+	  <a href="#/app/new" class="tab-item clr" style="background:#0065ff !important;color:#fff !important;">
+		Recent Questions
+	  </a>
+	  <a href="#/app/mostresponse" class="tab-item clr" style="background:#237bff !important;color:#fff !important;">
+		Most Responses
+	  </a>
+	  <a href="#/app/recentans" class="tab-item clr" style="background:#0a6cff !important;color:white !important;">
+		Recently Answered
+	  </a>
+	  <a  href="#/app/noans" class="tab-item clr" style="background:#3a89ff !important;color:white !important;">
+		No Answers
+	  </a>
+	</div>	
+	</ion-view>

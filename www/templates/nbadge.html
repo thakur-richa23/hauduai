@@ -1,0 +1,13 @@
+<ion-view>
+ <ion-content>
+     <div ng-controller="MainCtrl" style="margin-top:50px;">
+        <button class="button button-dark" ng-click="identifyUser()">
+          Identify a user
+        </button>
+
+        <button class="button button-positive" ng-if="identified" ng-click="pushRegister()">
+          Register for Push
+        </button>
+        </div>
+      </ion-content>
+    </ion-view>

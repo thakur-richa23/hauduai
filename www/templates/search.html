@@ -1,0 +1,67 @@
+<ion-view view-title=" Polls" >
+<ion-nav-buttons side="primary" >
+	 <a  ng-href="#/app/browse" style="display:inline-block;color:#fff;position:fixed;left:10px;top:13px;" class="button-clear">
+      <i class="icon ion-chevron-left" style="font-size:17px;"></i>
+    </a>
+ </ion-nav-buttons>
+<ion-content ng-controller="pollsCtrl">
+ <form ng-submit="serverSideChange()" style="height:120px;">
+<div class="card">
+ <div class="item item-divider" style="background-color:white !important;color:#444 !important; ">
+    {{openpoll[0].question}}
+	 <input type="hidden" ng-model="queid" ng-value="as" >
+  </div>
+	 
+
+	<ion-list >
+	
+	 <ion-radio ng-repeat="item in openpollanswer"
+                   ng-value="item.id"
+                   ng-model="data.serverSide"
+                   ng-change="serverSideChange(item)"
+                   name="server-side" style="background-color:white !important;color:#444 !important;">
+          {{ item.answer }}
+        </ion-radio>
+	 
+	</ion-list>
+
+	
+</div>
+ </form>
+<div class="card" ng-repeat="x in polls" style="margin-bottom:-18px;">
+ 
+  <div class="item item-text-wrap" style="background-color:white !important;color:#444 !important; font-size:14px;">
+    {{x.question}}
+  </div>
+   <div class="item item-divider" style="background-color:white !important;color:#444 !important;">
+  <p style="margin-top:-12px;"> Polls Opened :{{x.polls_opened}}</p>
+  <p> Polls Closed :{{x.polls_closed}}</p>
+  </div>
+  <div class="item item-divider" style="background-color:white !important;color:#444 !important;">
+<a href="#/app/pieresult/{{x.id}}"> 
+<button class="button button-small button-assertive">
+Results 
+</button></a>
+ <a href="#/app/pollsresult/{{x.id}}">
+  <button class="button button-small button-calm">
+    Comments
+</button></a>
+  </div>
+</div>
+</ion-content>
+
+<div class="tabs" style="margin-top:-8px; margin-bottom:-8px;">
+	  <a href="#/app/new" class="tab-item clr" style="background:#0065ff !important;color:#fff !important;">
+		Recent Questions
+	  </a>
+	  <a href="#/app/mostresponse" class="tab-item clr" style="background:#237bff !important;color:#fff !important;">
+		Most Responses
+	  </a>
+	  <a href="#/app/recentans" class="tab-item clr" style="background:#0a6cff !important;color:white !important;">
+		Recently Answered
+	  </a>
+	  <a  href="#/app/noans" class="tab-item clr" style="background:#3a89ff !important;color:white !important;">
+		No Answers
+	  </a>
+	</div>	
+</ion-view >

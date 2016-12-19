@@ -1,0 +1,87 @@
+<ion-view  view-title="Frequently Asked Questions">
+  <!--<ion-nav-back-button>
+	  
+  </ion-nav-back-button> -->
+<ion-content  ng-controller="faqCtrl">
+
+ <div>
+		<div class="item" style="background-color:white !important;">
+		<div class="card12" ng-repeat="x in faqpage">
+			<!-- <img src="img/timthumb.jpg">&nbsp&nbsp; -->
+		      <h2 style="text-align: justify;"><span style="font-size:18px;color:#292d63;"><b>Question</b></span> : {{x.faq_question|htmlToPlaintext|removeHTMLTags}}</h2><br>
+		      <h2 style="color:#8f8d93; text-align: justify;"><span style="font-size:18px;color:#292d63;"><b>Answer</b></span> : {{x.faq_answer|htmlToPlaintext}}</h2><hr><br>
+			</div>
+			<!-- <form  name="myForm" ng-submit="doSubmit()" class="form-group"  novalidate>
+		    <div class="item item-input-inset" style="background-color:white !important;">
+			 <div class="border">
+		<textarea class="text"  ng-model="answertyped" placeholder="Type your question here.." ></textarea> 
+		
+
+	
+</div> 
+	
+				<!-- <label class="item-input-wrapper"> 
+				  <textarea row="30" col="8" class="full-width" ng-model="answertyped" placeholder="Answers"></textarea>
+				 </label>                                              
+				<button class="button button-small question" ng-disabled="myForm.$invalid" type="submit" style="width:-1px;height:35px;">
+				  Submit
+				</button>
+			
+			</div>
+			</form>																						
+			<div >Characters Left: &nbsp;</div><div style="color:red;float:left">Characters Left: {{200-answertyped.length}}  </div>
+			<div class="row">
+			  <a href="#/app/questioncomm/{{aa}}">  <p><span>The Answer<span>: {{count_answeres}}</p></a>
+		    </div>	 -->
+		</div>
+	
+		
+	</div>
+	
+	
+	
+	
+	
+</ion-content>
+<div class="tabs">
+	  <a href="#/app/new" class="tab-item clr" style="background:#0065ff !important;color:#fff !important;">
+		Recent Questions
+	  </a>
+	  <a href="#/app/mostresponse" class="tab-item clr" style="background:#237bff !important;color:#fff !important;">
+		Most Responses
+	  </a>
+	  <a href="#/app/recentans" class="tab-item clr" style="background:#0a6cff !important;color:white !important;">
+		Recently Answered
+	  </a>
+	  <a  href="#/app/noans" class="tab-item clr" style="background:#3a89ff !important;color:white !important;">
+		No Answers
+	  </a>
+	</div>	
+</ion-view >
+<!-- <div class="tabs">
+	  <a href="#/app/new" class="tab-item clr">
+		Recent Questions
+	  </a>
+	  <a href="#/app/mostresponse" class="tab-item clr">
+		Most Responses
+	  </a>
+	  <a href="#/app/recentans" class="tab-item clr active">
+		Recently Answered
+	  </a>
+	  <a  href="#/app/noans" class="tab-item clr">
+		No Answers
+	  </a>
+	</div> 
+
+
+<style>
+ .bar .back-button.hide {
+    display: inherit !important;
+	color:white;
+	
+} 
+.active{
+	background-color:#0169b0;
+}
+
+</style>-->

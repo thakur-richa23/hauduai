@@ -1,0 +1,27 @@
+<ion-view view-title="Feedback Rating">
+<ion-nav-buttons side="primary" >
+	 <a  ng-href="#/app/browse" style="display:inline-block;color:#fff;position:fixed;left:10px;top:13px;" class="button-clear">
+      <i class="icon ion-chevron-left" style="font-size:17px;"></i>
+    </a>
+ </ion-nav-buttons>
+<ion-content ng-controller="rateCtrl">
+<div class="card" style="margin-top:100px;">
+
+<!-- <span style="color:red;font-size:17px;margin-left:12px;">Answer:</span> -->
+  <div class="item item-text-wrap" style="background:white !important;color:#3c84b6 !important;font-size:15px !important;">
+	<span class="abc" style="font-size:15px; color:#000000">My Overall Satisfaction Rating : </span>{{prof.result}}%<br>
+ <!--<span class="abc" style="font-size:15px; color:#000000">Number of questions answered by me : </span><br>
+    <span class="abc" style="font-size:15px; color:#000000">No of answers rated : </span><br>
+   
+    <span class="abc" style="font-size:15px; color:#000000">Your Answers Yet To Be Rated: </span><br>
+	<span class="abc" style="font-size:15px; color:#000000">Total questions answered by all subscribers:</span><br>
+    <span class="abc" style="font-size:15px; color:#000000">questions answered by me:</span>-->
+    
+    </div>
+    </div>
+    </ion-content>
+</ion-view>
+ <!--{{x.user_name}}
+  {{x.answer== "undefined" ? " " : x.answer|htmlToPlaintext|removeHTMLTags}}
+ {{x.subject_matter}}
+ {{x.suffix}}-->

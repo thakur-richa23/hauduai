@@ -1,0 +1,368 @@
+<ion-view view-title="Most Responses">
+ <ion-nav-buttons side="primary" >
+	 <a  ng-href="#/app/stu_mostresponse" style="display:inline-block;color:#fff;position:fixed;left:10px;top:13px;" class="button-clear">
+      <i class="icon ion-chevron-left" style="font-size:17px;"></i>
+    </a>
+ </ion-nav-buttons>
+<ion-content ng-controller="stu_answeresctrl">
+<br>
+
+	
+		<div class="list" ng-if="que.type=='lecturer'">
+		
+		
+		
+				<div class="item item-thumbnail-left" style="background-color:white !important;">
+				  <img src="http://hauduai.com.ng/{{que.user_image | imageempty}}" style="border-radius:60px !important;">
+				  <div class="box2">
+				  <p style="white-space:initial !important; color:red;"><span style="color:blue;font-size:12px;">Question: </span> {{que.question|removeHTMLTags|htmlToPlaintext}}</p>
+				  <h4><span style="color:blue;font-size:12px;">Name: </span> {{que.first_name}}</h4>
+				  <h4><span style="color:blue;font-size:12px;">User Type:</span> {{que.type}}</h4> 
+				  <h4><span style="color:blue;font-size:12px;">Department: </span> {{que.course_name}}</h4>
+				  <h4><span style="color:blue;font-size:12px;">Specialization: </span> {{que.lec_special}}</h4>
+				  <h4><span style="color:blue;font-size:12px;">Qualification: </span> {{que.lec_qualificaton}}</h4>
+				   
+				  </div>
+				  
+				  
+				  <div class="row">
+					<p>{{que.created | dateago}}&nbsp;</p>
+						&nbsp;&nbsp;			
+					<!-- <p>Views: 256</p> -->
+				  </div> 
+				</div>
+				<div class="box" >
+				   
+				  <a class="respond" href="#/app/stu_anscomm/{{id}}"> Provide Answer</a>
+				  </div>
+		</div>
+
+        <div class="list" ng-if="que.type=='student'">
+		
+		
+		
+				<div class="item item-thumbnail-left" style="background-color:white !important;">
+				  <img src="http://hauduai.com.ng/{{que.user_image | imageempty}}" style="border-radius:60px !important;">
+				  <div class="box2">
+				  <p style="white-space:initial !important; color:red;"><span style="color:blue;font-size:12px;">Question: </span> {{que.question|removeHTMLTags|htmlToPlaintext}}</p>
+				  <h4><span style="color:blue;font-size:12px;">Name: </span> {{que.user_name}}</h4>
+				  <h4><span style="color:blue;font-size:12px;">User Type:</span> {{que.type}}</h4> 
+				  <h4><span style="color:blue;font-size:12px;">Course: </span> {{que.course_name}}</h4>
+				  <h4><span style="color:blue;font-size:12px;">Year(Level): </span> {{que.year_level}}</h4>
+				  <h4><span style="color:blue;font-size:12px;">University: </span> {{que.university_name}}</h4>
+				  
+				  </div>
+						  
+				  
+				  <div class="row">
+					<p>{{que.created | dateago}}&nbsp;</p>
+						&nbsp;&nbsp;			
+					<!-- <p>Views: 256</p> -->
+				  </div> 
+				</div>
+				<div class="box" >
+				   
+				  <a class="respond" href="#/app/stu_anscomm/{{id}}"> Provide Answer</a>
+				  </div>
+		</div>
+		
+					<!-- End For Check Expert -->
+					
+			<div class="item item-thumbnail-left" ng-show="answer_avail" ng-repeat="x in livenks" style="background-color:white !important;padding-left:0px; width:100%;">
+				
+				  <div class="list"  ng-if="x.type=='Lecturer'">
+				  
+					<div class="box2">
+					  <h3 style="white-space: initial !important;margin-bottom:-15px;"><span style="color:red;font-size:x-larger;">Answer : </span>{{x.ans|htmlToPlaintext|removeHTMLTags}}</h3><br>
+					   <h3 style="white-space: initial !important;margin-bottom:-15px;"><span style="color:red;font-size:x-larger;">Lecturer Name : </span>{{x.name}}</h3><br>
+					   <!-- <h2 style="white-space: initial !important;"><span style="color:red;font-size:larger;">Name : </span>{{x.user_name}}</h2><br> -->
+						<h3 style="white-space: initial !important;margin-bottom:-15px;"><span style="color:red;font-size:x-larger;">Department :</span> {{x.course}}</h3><br>
+					  <h3 style="white-space: initial !important;margin-bottom:-15px;"><span style="color:red;font-size:x-larger;">Specialization : </span>{{x.lec_special}}</h3><br>
+						 <h3 style="white-space: initial !important;margin-bottom:-15px;"><span style="color:red;font-size:x-larger;">Qualification : </span>{{x.lec_qualification}}</h3><br>
+
+						<h3 style="white-space: initial !important;margin-bottom:-15px;"><span style="color:red;font-size:x-larger;">Rating : 
+						<div class="stars" ng-model="rate"  ng-controller="stuCtrl" style="vertical-align:middle;">
+					<form action="" ng-if="x.value == '5'">
+					<input class="star star-5" ng-click="mystar({{x.id}},5)" value = "5" id="star-5{{x.id}}" type="radio" name="star" checked /> 
+					<label class="star star-5" for="star-5{{x.id}}"></label>
+					<input class="star star-4" id="star-4{{x.id}}" ng-click="mystar({{x.id}},4)" type="radio" name="star"/>
+					
+					<label class="star star-4" for="star-4{{x.id}}"></label>
+					<input class="star star-3"  id="star-3{{x.id}}" ng-click="mystar({{x.id}},3)" type="radio" name="star" />
+					
+					
+					<label class="star star-3" for="star-3{{x.id}}"></label>
+					
+					<input class="star star-2"  id="star-2{{x.id}}" ng-click="mystar({{x.id}},2)" type="radio" name="star"  /> 
+				
+					<label class="star star-2" for="star-2{{x.id}}"></label>
+					<input class="star star-1" id="star-1{{x.id}}" ng-click="mystar({{x.id}},1)" type="radio" name="star"   />
+					
+					<label class="star star-1" for="star-1{{x.id}}"></label>
+				</form>
+				<form action="" ng-if="x.value == '4'">
+					<input class="star star-5" ng-click="mystar({{x.id}},5)" id="star-5{{x.id}}" type="radio" name="star" /> 
+					<label class="star star-5" for="star-5{{x.id}}"></label>
+					<input class="star star-4" id="star-4{{x.id}}" ng-click="mystar({{x.id}},4)" value = "4" type="radio" name="star" checked/>
+					
+					<label class="star star-4" for="star-4{{x.id}}"></label>
+					<input class="star star-3"  id="star-3{{x.id}}" ng-click="mystar({{x.id}},3)" type="radio" name="star" />
+					
+					
+					<label class="star star-3" for="star-3{{x.id}}"></label>
+					
+					<input class="star star-2"  id="star-2{{x.id}}" ng-click="mystar({{x.id}},2)" type="radio" name="star"  /> 
+				
+					<label class="star star-2" for="star-2{{x.id}}"></label>
+					<input class="star star-1" id="star-1{{x.id}}" ng-click="mystar({{x.id}},1)" type="radio" name="star"   />
+					
+					<label class="star star-1" for="star-1{{x.id}}"></label>
+				</form>
+				<form action="" ng-if="x.value == '3'">
+				
+				<input class="star star-5" ng-click="mystar({{x.id}},5)" id="star-5{{x.id}}" type="radio" name="star" /> 
+					<label class="star star-5" for="star-5{{x.id}}"></label>
+					<input class="star star-4" id="star-4{{x.id}}" ng-click="mystar({{x.id}},4)" type="radio" name="star"/>
+					
+					<label class="star star-4" for="star-4{{x.id}}"></label>
+					<input class="star star-3"  id="star-3{{x.id}}" ng-click="mystar({{x.id}},3)" value = "3" type="radio" name="star" checked/>
+					
+					
+					<label class="star star-3" for="star-3{{x.id}}"></label>
+					
+					<input class="star star-2"  id="star-2{{x.id}}" ng-click="mystar({{x.id}},2)" type="radio" name="star"  /> 
+				
+					<label class="star star-2" for="star-2{{x.id}}"></label>
+					<input class="star star-1" id="star-1{{x.id}}" ng-click="mystar({{x.id}},1)" type="radio" name="star"   />
+					
+					<label class="star star-1" for="star-1{{x.id}}"></label>
+				</form>
+				<form action="" ng-if="x.value == '2'">
+				
+					<input class="star star-5" ng-click="mystar({{x.id}},5)" id="star-5{{x.id}}" type="radio" name="star" /> 
+					<label class="star star-5" for="star-5{{x.id}}"></label>
+					<input class="star star-4" id="star-4{{x.id}}" ng-click="mystar({{x.id}},4)" type="radio" name="star"/>
+					
+					<label class="star star-4" for="star-4{{x.id}}"></label>
+					<input class="star star-3"  id="star-3{{x.id}}" ng-click="mystar({{x.id}},3)" type="radio" name="star" />
+					
+					
+					<label class="star star-3" for="star-3{{x.id}}"></label>
+					
+					<input class="star star-2"  id="star-2{{x.id}}" ng-click="mystar({{x.id}},2)" value = "2" type="radio" name="star"  checked/> 
+				
+					<label class="star star-2" for="star-2{{x.id}}"></label>
+					<input class="star star-1" id="star-1{{x.id}}" ng-click="mystar({{x.id}},1)" type="radio" name="star"   />
+					
+					<label class="star star-1" for="star-1{{x.id}}"></label>
+				</form>
+				<form action="" ng-if="x.value == '1'">
+				<input class="star star-5" ng-click="mystar({{x.id}},5)" id="star-5{{x.id}}" type="radio" name="star" /> 
+					<label class="star star-5" for="star-5{{x.id}}"></label>
+					<input class="star star-4" id="star-4{{x.id}}" ng-click="mystar({{x.id}},4)" type="radio" name="star"/>
+					
+					<label class="star star-4" for="star-4{{x.id}}"></label>
+					<input class="star star-3"  id="star-3{{x.id}}" ng-click="mystar({{x.id}},3)" type="radio" name="star" />
+					
+					
+					<label class="star star-3" for="star-3{{x.id}}"></label>
+					
+					<input class="star star-2"  id="star-2{{x.id}}" ng-click="mystar({{x.id}},2)" type="radio" name="star"  /> 
+				
+					<label class="star star-2" for="star-2{{x.id}}"></label>
+					<input class="star star-1" id="star-1{{x.id}}" ng-click="mystar({{x.id}},1)" value = "1" type="radio" name="star"  checked />
+					
+					<label class="star star-1" for="star-1{{x.id}}"></label>
+				</form>
+				<form action="" ng-if="x.value == null || x.value == '0'">
+				<input class="star star-5" ng-click="mystar({{x.id}},5)" id="star-5{{x.id}}" type="radio" name="star" /> 
+					<label class="star star-5" for="star-5{{x.id}}"></label>
+
+					<input class="star star-4" id="star-4{{x.id}}" ng-click="mystar({{x.id}},4)" type="radio" name="star"/>
+					<label class="star star-4" for="star-4{{x.id}}"></label>
+
+					<input class="star star-3"  id="star-3{{x.id}}" ng-click="mystar({{x.id}},3)" type="radio" name="star" />
+					<label class="star star-3" for="star-3{{x.id}}"></label>
+					
+					<input class="star star-2"  id="star-2{{x.id}}" ng-click="mystar({{x.id}},2)" type="radio" name="star"  /> 
+				<label class="star star-2" for="star-2{{x.id}}"></label>
+
+					<input class="star star-1" id="star-1{{x.id}}" ng-click="mystar({{x.id}},1)" type="radio" name="star"   />
+					<label class="star star-1" for="star-1{{x.id}}"></label>
+					
+				</form>
+			</div>
+							</span></h3><br>
+
+					</div>
+				  </div>
+				
+					
+				<div class="list" ng-if="x.type=='student'">
+					<div class="box2">
+					  <h3 style="white-space: initial !important;margin-bottom:-8px;"><span style="color:red;font-size:x-larger;">Answer : </span>{{x.ans== "undefined" ? " " : x.ans|htmlToPlaintext|removeHTMLTags}}</h3><br>
+					   <h3 style="white-space: initial !important;margin-bottom:-8px;"><span style="color:red;font-size:x-larger;">Student Name : </span>{{x.first_name}}</h3><br>
+					   <!-- <h2 style="white-space: initial !important;"><span style="color:red;font-size:larger;">Name : </span>{{x.user_name}}</h2>-->
+					  <h3 style="white-space: initial !important;margin-bottom:-8px;"><span style="color:red;font-size:x-larger;">Course : </span>{{x.course}}</h3><br>
+					  <h3 style="white-space: initial !important;margin-bottom:-8px;"><span style="color:red;font-size:x-larger;">Year(Level) : </span>{{x.year}}</h3><br>
+					  <h3 style="white-space: initial !important;margin-bottom:-8px;"><span style="color:red;font-size:x-larger;">University : </span>{{x.university}}</h3><br>
+						<h3 style="white-space: initial !important;margin-bottom:-15px;"><span style="color:red;font-size:x-larger;">Rating : 
+					<div class="stars" ng-model="rate"  ng-controller="stu_MostResCtrl" style="vertical-align:middle;">
+     <form action="" ng-if="x.value == '5'">
+       <input class="star star-5" ng-click="mystar({{x.id}},5)" value = "5" id="star-5{{x.id}}" type="radio" name="star" checked /> 
+      <label class="star star-5" for="star-5{{x.id}}"></label>
+      <input class="star star-4" id="star-4{{x.id}}" ng-click="mystar({{x.id}},4)" type="radio" name="star"/>
+      
+      <label class="star star-4" for="star-4{{x.id}}"></label>
+      <input class="star star-3"  id="star-3{{x.id}}" ng-click="mystar({{x.id}},3)" type="radio" name="star" />
+      
+      
+      <label class="star star-3" for="star-3{{x.id}}"></label>
+      
+      <input class="star star-2"  id="star-2{{x.id}}" ng-click="mystar({{x.id}},2)" type="radio" name="star"  /> 
+     
+      <label class="star star-2" for="star-2{{x.id}}"></label>
+      <input class="star star-1" id="star-1{{x.id}}" ng-click="mystar({{x.id}},1)" type="radio" name="star"   />
+      
+      <label class="star star-1" for="star-1{{x.id}}"></label>
+    </form>
+    <form action="" ng-if="x.value == '4'">
+       <input class="star star-5" ng-click="mystar({{x.id}},5)" id="star-5{{x.id}}" type="radio" name="star" /> 
+      <label class="star star-5" for="star-5{{x.id}}"></label>
+      <input class="star star-4" id="star-4{{x.id}}" ng-click="mystar({{x.id}},4)" value = "4" type="radio" name="star" checked/>
+      
+      <label class="star star-4" for="star-4{{x.id}}"></label>
+      <input class="star star-3"  id="star-3{{x.id}}" ng-click="mystar({{x.id}},3)" type="radio" name="star" />
+      
+      
+      <label class="star star-3" for="star-3{{x.id}}"></label>
+      
+      <input class="star star-2"  id="star-2{{x.id}}" ng-click="mystar({{x.id}},2)" type="radio" name="star"  /> 
+     
+      <label class="star star-2" for="star-2{{x.id}}"></label>
+      <input class="star star-1" id="star-1{{x.id}}" ng-click="mystar({{x.id}},1)" type="radio" name="star"   />
+      
+      <label class="star star-1" for="star-1{{x.id}}"></label>
+    </form>
+    <form action="" ng-if="x.value == '3'">
+     
+     <input class="star star-5" ng-click="mystar({{x.id}},5)" id="star-5{{x.id}}" type="radio" name="star" /> 
+      <label class="star star-5" for="star-5{{x.id}}"></label>
+      <input class="star star-4" id="star-4{{x.id}}" ng-click="mystar({{x.id}},4)" type="radio" name="star"/>
+      
+      <label class="star star-4" for="star-4{{x.id}}"></label>
+      <input class="star star-3"  id="star-3{{x.id}}" ng-click="mystar({{x.id}},3)" value = "3" type="radio" name="star" checked/>
+      
+      
+      <label class="star star-3" for="star-3{{x.id}}"></label>
+      
+      <input class="star star-2"  id="star-2{{x.id}}" ng-click="mystar({{x.id}},2)" type="radio" name="star"  /> 
+     
+      <label class="star star-2" for="star-2{{x.id}}"></label>
+      <input class="star star-1" id="star-1{{x.id}}" ng-click="mystar({{x.id}},1)" type="radio" name="star"   />
+      
+      <label class="star star-1" for="star-1{{x.id}}"></label>
+    </form>
+    <form action="" ng-if="x.value == '2'">
+     
+      <input class="star star-5" ng-click="mystar({{x.id}},5)" id="star-5{{x.id}}" type="radio" name="star" /> 
+      <label class="star star-5" for="star-5{{x.id}}"></label>
+      <input class="star star-4" id="star-4{{x.id}}" ng-click="mystar({{x.id}},4)" type="radio" name="star"/>
+      
+      <label class="star star-4" for="star-4{{x.id}}"></label>
+      <input class="star star-3"  id="star-3{{x.id}}" ng-click="mystar({{x.id}},3)" type="radio" name="star" />
+      
+      
+      <label class="star star-3" for="star-3{{x.id}}"></label>
+      
+      <input class="star star-2"  id="star-2{{x.id}}" ng-click="mystar({{x.id}},2)" value = "2" type="radio" name="star"  checked/> 
+     
+      <label class="star star-2" for="star-2{{x.id}}"></label>
+      <input class="star star-1" id="star-1{{x.id}}" ng-click="mystar({{x.id}},1)" type="radio" name="star"   />
+      
+      <label class="star star-1" for="star-1{{x.id}}"></label>
+    </form>
+    <form action="" ng-if="x.value == '1'">
+     <input class="star star-5" ng-click="mystar({{x.id}},5)" id="star-5{{x.id}}" type="radio" name="star" /> 
+      <label class="star star-5" for="star-5{{x.id}}"></label>
+      <input class="star star-4" id="star-4{{x.id}}" ng-click="mystar({{x.id}},4)" type="radio" name="star"/>
+      
+      <label class="star star-4" for="star-4{{x.id}}"></label>
+      <input class="star star-3"  id="star-3{{x.id}}" ng-click="mystar({{x.id}},3)" type="radio" name="star" />
+      
+      
+      <label class="star star-3" for="star-3{{x.id}}"></label>
+      
+      <input class="star star-2"  id="star-2{{x.id}}" ng-click="mystar({{x.id}},2)" type="radio" name="star"  /> 
+     
+      <label class="star star-2" for="star-2{{x.id}}"></label>
+      <input class="star star-1" id="star-1{{x.id}}" ng-click="mystar({{x.id}},1)" value = "1" type="radio" name="star"  checked />
+      
+      <label class="star star-1" for="star-1{{x.id}}"></label>
+    </form>
+    <form action="" ng-if="x.value == null || x.value == '0'">
+    <input class="star star-5" ng-click="mystar({{x.id}},5)" id="star-5{{x.id}}" type="radio" name="star" /> 
+      <label class="star star-5" for="star-5{{x.id}}"></label>
+
+      <input class="star star-4" id="star-4{{x.id}}" ng-click="mystar({{x.id}},4)" type="radio" name="star"/>
+      <label class="star star-4" for="star-4{{x.id}}"></label>
+
+      <input class="star star-3"  id="star-3{{x.id}}" ng-click="mystar({{x.id}},3)" type="radio" name="star" />
+      <label class="star star-3" for="star-3{{x.id}}"></label>
+      
+      <input class="star star-2"  id="star-2{{x.id}}" ng-click="mystar({{x.id}},2)" type="radio" name="star"  /> 
+     <label class="star star-2" for="star-2{{x.id}}"></label>
+
+      <input class="star star-1" id="star-1{{x.id}}" ng-click="mystar({{x.id}},1)" type="radio" name="star"   />
+      <label class="star star-1" for="star-1{{x.id}}"></label>
+      
+    </form>
+  </div>
+							</span></h3>
+				  </div>
+				</div>
+				</div>
+			</div>
+		
+		
+	
+		
+		
+    
+
+	
+	
+	
+	
+	
+		<ion-infinite-scroll  distance="1%"  ng-if="noMoreItemsAvailable" on-infinite="loadolder()" style="background-color:white !important;" >
+		</ion-infinite-scroll>
+  
+</ion-content>
+<!-- <div class="tabs">
+	  <a href="#/app/new" class="tab-item clr">
+		Recent Questions
+	  </a>
+	  <a href="#/app/mostresponse" class="tab-item clr">
+		Most Responses
+	  </a>
+	  <a href="#/app/recentans" class="tab-item clr active">
+		Recently Answered
+	  </a>
+	  <a  href="#/app/noans" class="tab-item clr">
+		No Answers
+	  </a>
+	</div> -->
+</ion-view >
+
+<style>
+ .bar .back-button.hide {
+    display: inherit !important;
+	color:white;
+} 
+.active{
+	background-color:#0169b0;
+}
+
+
+</style>

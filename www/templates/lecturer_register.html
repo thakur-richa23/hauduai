@@ -1,0 +1,234 @@
+
+<ion-scroll  ng-controller="lectregisterCtrl" >
+<div class="bar bar-header head">
+<a href="#/app/stu_register" class="button button-icon ion-ios-arrow-back"></a>
+  <h1 class="title" style="color:white;">Register As Lecturer</h1>
+</div>
+   <form  name="myForm" ng-submit="doSubmit()" class="form-group"  novalidate >
+ 
+<div class="list has-subheader" style="width: 89%; margin-left: 5%;">
+ 
+<div class="row" style="margin-bottom:5px;margin-top:-35px;" >
+		<div class="col col-60 form-groups"> 
+			<!-- <div class=""> -->
+				 <label class="item item-input"  style="color:red;">
+					 <input type="text" placeholder="First Name" ng-model="fname">
+				</label>
+			<!-- </div> -->
+		</div>
+		<div class="col col-60  form-groups">
+		<!-- <div class=""> -->
+				 <label class="item item-input"  style="color:red;">
+					<input type="text" placeholder="Last Name" ng-model="lname">
+				</label>
+			<!--  <label class="item item-input">
+				 <input type="text" placeholder="Last Name" ng-model="lname" required ">
+			</label> -->
+		<!-- </div> -->
+		</div>
+	</div>
+	<div class="row" style="margin-bottom:5px;">
+			<div class="col col-75  form-groups" ng-show="show"  style="color:red;">
+				<label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp;</div>
+					
+					  <select ng-model="qulaity" class="sel" ng-Change="changed()">
+							 <option value=""> Qualification</option>
+						  <option ng-repeat="x in qualification" value="{{x.id}}">{{x.lec_qualificaton}}</option> 
+						</select>
+				</label>
+			</div>
+				<div class="col col-75 form-groups" ng-show="hideme">
+					<label class="item item-input">
+						 <input type="text" placeholder="Add Qualification" ng-model="qulaity">
+					</label>
+				</div>
+				  <div class="col">
+						<div class="button button-block button-small btn2" ng-click="change_input()">ADD</div>
+				  </div>
+			</div>
+			<!-- -->
+	
+		<div class="row" style="margin-bottom:5px;">
+			
+			 <div class="col col-100  form-groups"  style="color:red;">
+
+                <label class="item item-input item-select">
+                    <div class="input-labell">
+                        &nbsp;
+                    </div>
+                    <select ng-model="lec_appell" class="sel">
+						 <option value=""> Appellation</option>
+						  <option ng-repeat="x in appellation" value="{{x.id}}">{{x.lec_appellation}}</option>
+						  
+					</select>
+                </label>
+
+      </div>
+			</div>
+		
+			<div class="row" style="margin-bottom:5px;">
+			<div class="col col-75  form-groups"  ng-show="Show" style="color:red;">
+		 <label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp; </div>
+					
+					  
+				<!-- <select ng-Change="getsubsubsector()" ng-model="subsubsector" > -->
+					<select ng-Change="getsubspe_area()" ng-model="lec_area"  class="sel">
+					   <option  value="" > Name of University</option>
+					  <option ng-repeat="x in Name_uni" value={{x.id}}>{{x.university_name}}</option>
+     
+        	</select>
+				</label>
+			</div>
+			<div class="col col-75 form-groups" ng-show="Hideme">
+					<label class="item item-input">
+						 <input type="text" placeholder="Add University" ng-model="lec_area">
+					</label>
+				</div>
+				  <div class="col">
+						<div class="button button-block button-small btn2" ng-click="Change_Input()">ADD</div>
+				  </div>
+		</div>
+
+		
+			<div class="row" style="margin-bottom:5px;">
+			<div class="col col-75  form-groups"  ng-show="SHow" style="color:red;">
+				 <label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp; </div>
+					
+					 <select ng-Change="getsubsector()" ng-model="spe_faculty"   class="sel">
+						  <option  value="">Faculty</option>
+						  <option ng-repeat="x in faculty" value={{x.id}}>{{x.faculty_name}}</option>
+     
+					</select>
+				</label>
+			</div>
+			<div class="col col-75 form-groups" ng-show="HIdeme">
+					<label class="item item-input">
+						 <input type="text" placeholder="Add Faculty" ng-model="spe_faculty">
+					</label>
+				</div>
+				  <div class="col">
+						<div class="button button-block button-small btn2" ng-click="CHange_INput()">ADD</div>
+				  </div>
+			</div>
+			
+			<div class="row" style="margin-bottom:5px;">
+			<div class="col col-75  form-groups"  ng-show="SHOw" style="color:red;">
+			   <label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp;</div>
+				
+					 
+					  <!-- <select ng-Change="getsubprofession()" ng-model="subprofession" class="sel"> -->
+						<select ng-Change="getsubspe_area2()" ng-model="lec_Dep" class="sel">
+					      <option  value=""> Department</option> 
+					    <option ng-repeat="x in department" value={{x.id}} >{{x.course_name}}</option>
+					 
+					  </select>
+				</label>
+			</div>
+			<div class="col col-75 form-groups" ng-show="HIDeme">
+					<label class="item item-input">
+						 <input type="text" placeholder="Add Department" ng-model="lec_Dep">
+					</label>
+				</div>
+				  <div class="col">
+						<div class="button button-block button-small btn2" ng-click="CHAnge_INPut()">ADD</div>
+				  </div>
+			</div>
+			
+			<div class="row" style="margin-bottom:5px;">
+			<div class="col col-75  form-groups" ng-show="SHOW" style="color:red;">
+			<!-- <div  class="col col-75" ng-show="showmee"> -->
+			 	<label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp;</div>
+				
+					 
+					  <!-- <select ng-Change="getsubprofession()" ng-model="subprofession" class="sel"> -->
+						<!-- <select ng-Change="getsubspe_area2()" ng-model="spe_area2" class="sel"> -->
+					<select ng-Change="getsubsector()" ng-model="lec_special" class="sel">
+					<option value="">Specialization</option>
+					<option ng-repeat="x in specaliztion" value={{x.id}}>{{x.lec_special}}</option>
+              </select>
+				</label>
+				</div>
+				<div class="col col-75 form-groups" ng-show="HIDEme">
+					<label class="item item-input">
+						 <input type="text" placeholder="Add Specialization" ng-model="lec_special">
+					</label>
+				</div>
+				  <div class="col">
+						<div class="button button-block button-small btn2" ng-click="CHANge_INPUt()">ADD</div>
+				  </div>
+			</div>
+			<!--ng-show="showmee"-->
+
+			<div class="row" style="margin-bottom:5px;">
+			<div class="col col-100  form-groups" style="color:red;">
+				<label class="item item-input">
+				<input type="text" placeholder="Phone Number" ng-model="phone_no" required>  	
+				</label>
+			</div>
+			</div>	
+		
+		<div class="row" style="margin-bottom:5px;">	
+			<div class="col col-100  form-groups"  style="color:red;"> 
+				  <label class="item item-input">
+				  <input type="email" placeholder="Email" ng-model="email" required>
+				</label>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom:5px;">
+			<div class="col col-100  form-groups"  style="color:red;">
+				 <label class="item item-input">
+					 <input type="password"  minlength="6" placeholder="Password (Min 6 character)" ng-model="password" required>
+				</label>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom:5px;">
+			<div class="col col-100  form-groups">
+				<label class="item item-input">
+				 <input type="Password" placeholder="Confirm Password" ng-model="cpassword" required>
+				</label>
+			</div>
+		</div>
+
+		<div class="row" style="margin-top:5px;">
+			<div class="col col-100  form-groups"  style="color:red;">
+				 <label class="item item-input item-select">
+					<div class="input-labell input-label-text">&nbsp;</div>
+					<select ng-model="gettoknow" class="sel"  required>
+		<option value=""> How did you Know about Hauduai?</option>
+		<option ng-repeat="x in know_about_hauduai" >{{x.title}}</option>
+		 
+		</select>
+				</label>
+			</div>
+		</div>
+	
+ </div>
+ <br>
+ <br>
+ <br>
+ <br>
+	 <div class="form-groups" style="margin-left:25px !important;"><ion-checkbox dark checked="true" value="check" ng-model="filter" required> I agree to terms and conditions</ion-checkbox> 
+</div>
+			<!-- <label for="chk" style="margin-left:45px;font-size:14px;color:black;">
+				<input type="checkbox" id="chk" onclick="" style="padding:50px;"/>    
+						I agree to terms and conditions
+		  </label>
+	  <br>   ng-disabled="myForm.$invalid"
+	  <br>	 -->
+		 <label class="item"    style="background-color:#fff !important;">
+  <button class="button button-positive btn1" ng-disabled="" type="submit" style="width:100%;	display: block;margin-right: 0px;
+    margin-left: 0; margin-top: 5px; margin-bottom: 5px; border-right-width: 1px;
+    border-left-width: 1px;border-radius: 4px;" >
+  Register
+</button>
+</label>
+   
+</form>
+
+</ion-scroll>
+

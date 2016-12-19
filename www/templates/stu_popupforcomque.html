@@ -1,0 +1,80 @@
+<ion-modal-view>
+
+	<ion-header-bar>
+		<h1 class="title" style="color: #fff;
+    text-align: center;">Ask Student Community </h1>
+		<div class="buttons">
+			<button class="button button-clear" ng-click="closepop()">Close</button>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+		<div ng-controller="stu_termsandcondCtrl">
+			<form ng-submit="stu_comsubmitque()" name="myfForm">
+				<div class="list">
+					<label class="item item-input" style="background-color:#fff !important;">
+          <span class="input-label">Question:</span>
+          <input type="text" ng-model="loginData.ques" disabled>
+        </label>
+
+					<label class="item item-input" style="background-color:#fff !important;">
+          <span class="input-label">Username:</span>
+          <input type="text" ng-model="loginData.stu_username" disabled>
+        </label>
+					<label class="item item-input" style="background-color:#fff !important;">
+          <span class="input-label">Email:</span>
+          <input type="text" ng-model="loginData.email" disabled>
+        </label>
+					<label class="item item-input" style="background-color:#fff !important;">
+          <span class="input-label">Faculty:</span>
+          <input type="text" ng-model="loginData.studentfac" disabled>
+           <input type="hidden" ng-model="loginData.studentfacValue" disabled>
+        </label>
+					<input type="hidden" ng-model="loginData.sfValue">
+					<label class="item item-input" style="background-color:#fff !important;">
+          <span class="input-label" value="">Course:</span>
+          <input type="text" ng-model="loginData.stu_f_field" disabled>
+          <input type="hidden" ng-model="loginData.stu_f_fieldValue" disabled>
+        </label>
+					<label class="item item-input" style="background-color:#fff !important;">
+          <span class="input-label" value="">Year Level:</span>
+          <input type="text" ng-model="loginData.stu_level_field" disabled>
+          <input type="hidden" ng-model="loginData.stu_level_fieldValue" disabled>
+        </label>
+			<!--	<label class="item item-input" style="background-color:#fff !important;">
+          <span class="input-label">Question:</span>
+          <input type="text" ng-model="loginData.points" disabled>
+					<input type="hidden" ng-model="loginData.pointsValue" disabled>
+        </label>-->
+					<!--<label class="item item-input" style="background-color:#fff !important;">
+          <span class="input-label" value="" style="color:blue;">Information Display:</span>
+        </label>-->
+
+				
+
+					<!--<label class="checkbox" style=" margin-left: 16px;margin-top: 14px;       color: #444; width: 100%;">
+      <ion-checkbox  checked="true" value="check" ng-model="tac"> I agree to terms and conditions</ion-checkbox> 
+  </label> -->
+					<!-- <label class="checkbox" style=" margin-left:16px;margin-top:14px;color: #444; width: 100%;">
+   <input type="checkbox"  ng-model="filter"  style="float:left;"><span  style="font-size:17px;margin-left: 3%;"><a href="http://www.hauduai.com.ng/pages/terms-and-conditions"  style="font-size:17px;"> I agree to terms and condition</a></span>
+</label> -->
+
+
+
+					<label class="item" style="background-color:#fff !important;">
+          <button class="button button-block button-positive" ng-disabled="myfForm.$invalid" style="background-color:#0169b0 !important;margin-left: -2%;" type="submit">Submit</button>
+        </label>
+				</div>
+			</form>
+		</div>
+	</ion-content>
+</ion-modal-view>
+<style>
+	#s {
+		margin-left: 20px;
+		margin-top: 10px;
+	}
+	
+	.bar-header {
+		background-color: #0169b0;
+	}
+</style>
